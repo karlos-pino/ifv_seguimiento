@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seguimiento Pedagógico — Grado 10</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+<style>
+  :root {
+    --bg: #0f1117;
+    --surface: #181c27;
+    --surface2: #1e2333;
+    --border: #2a3050;
+    --text: #e8eaf0;
+    --muted: #8892b0;
+    --accent: #4f8ef7;
+    --green: #2ecc8a;
+    --yellow: #f5c842;
+    --red: #f25c5c;
+    --gray: #4a5168;
+    --radius: 14px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Sora', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* HEADER */
+  header {
+    background: linear-gradient(135deg, #141829 0%, #1a2040 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 20px 32px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .header-icon {
+    width: 44px; height: 44px;
+    background: linear-gradient(135deg, var(--accent), #7b5ef7);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px;
+  }
+
+  header h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.4rem;
+    color: var(--text);
+  }
+
+  header p {
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+
+  .period-badge {
+    margin-left: auto;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 0.75rem;
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  /* LAYOUT */
+  .layout {
+    display: flex;
+    flex: 1;
+    height: calc(100vh - 85px);
+  }
+
+  /* SIDEBAR */
+  aside {
+    width: 240px;
+    background: var(--surface);
+    border-right: 1px solid var(--border);
+    padding: 20px 12px;
+    overflow-y: auto;
+    flex-shrink: 0;
+  }
+
+  aside h3 {
+    font-size: 0.68rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 0 10px;
+    margin-bottom: 12px;
+  }
+
+  .student-btn {
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: 12px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 4px;
+    transition: background 0.2s;
+    text-align: left;
+  }
+
+  .student-btn:hover { background: var(--surface2); }
+  .student-btn.active { background: linear-gradient(135deg, rgba(79,142,247,0.2), rgba(123,94,247,0.15)); border: 1px solid rgba(79,142,247,0.3); }
+
+  .avatar {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .student-info-sidebar { flex: 1; min-width: 0; }
+  .student-name-short {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .semaforo-mini {
+    font-size: 0.7rem;
+    margin-top: 2px;
+  }
+
+  /* MAIN CONTENT */
+  main {
+    flex: 1;
+    overflow-y: auto;
+    padding: 28px 32px;
+    background: var(--bg);
+  }
+
+  .welcome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: var(--muted);
+    text-align: center;
+  }
+
+  .welcome .icon { font-size: 56px; margin-bottom: 16px; }
+  .welcome h2 { font-family: 'DM Serif Display', serif; font-size: 1.5rem; color: var(--text); margin-bottom: 8px; }
+  .welcome p { font-size: 0.85rem; }
+
+  /* STUDENT PROFILE */
+  .profile-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 28px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .profile-avatar {
+    width: 64px; height: 64px;
+    border-radius: 16px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 24px;
+    font-weight: 800;
+    flex-shrink: 0;
+  }
+
+  .profile-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.6rem;
+    color: var(--text);
+  }
+
+  .profile-meta {
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+
+  .global-badge {
+    margin-left: auto;
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  .badge-verde { background: rgba(46,204,138,0.15); border: 1.5px solid var(--green); color: var(--green); }
+  .badge-amarillo { background: rgba(245,200,66,0.15); border: 1.5px solid var(--yellow); color: var(--yellow); }
+  .badge-rojo { background: rgba(242,92,92,0.15); border: 1.5px solid var(--red); color: var(--red); }
+
+  /* GRID */
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+
+  .grid-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+  }
+
+  .card-title {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--muted);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* AREAS TABLE */
+  .areas-table { width: 100%; border-collapse: collapse; }
+  .areas-table th {
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--muted);
+    padding: 8px 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .areas-table td {
+    padding: 10px 12px;
+    font-size: 0.82rem;
+    border-bottom: 1px solid rgba(42,48,80,0.5);
+    vertical-align: top;
+  }
+
+  .areas-table tr:last-child td { border-bottom: none; }
+  .areas-table tr:hover td { background: rgba(255,255,255,0.02); }
+
+  .dot {
+    display: inline-block;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    margin-right: 6px;
+    flex-shrink: 0;
+  }
+
+  .dot-verde { background: var(--green); box-shadow: 0 0 6px var(--green); }
+  .dot-amarillo { background: var(--yellow); box-shadow: 0 0 6px var(--yellow); }
+  .dot-rojo { background: var(--red); box-shadow: 0 0 6px var(--red); }
+  .dot-gris { background: var(--gray); }
+
+  .area-cell { font-weight: 600; color: var(--text); }
+  .docente-cell { color: var(--muted); font-size: 0.78rem; }
+  .estado-cell { color: #aab0c8; font-size: 0.8rem; line-height: 1.4; }
+
+  /* RISK SIGNALS */
+  .risk-item {
+    display: flex;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(42,48,80,0.5);
+    align-items: flex-start;
+  }
+
+  .risk-item:last-child { border-bottom: none; }
+  .risk-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+  .risk-text { font-size: 0.83rem; color: #aab0c8; line-height: 1.5; }
+
+  /* FEEDBACK TEXT */
+  .feedback-text {
+    font-size: 0.85rem;
+    color: #aab0c8;
+    line-height: 1.7;
+  }
+
+  /* HABITS */
+  .habit-tag {
+    display: inline-block;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 5px 12px;
+    font-size: 0.75rem;
+    color: var(--muted);
+    margin: 4px;
+  }
+
+  /* RECOMMENDATIONS */
+  .rec-item {
+    display: flex;
+    gap: 12px;
+    padding: 10px 0;
+    font-size: 0.83rem;
+    color: #aab0c8;
+    line-height: 1.5;
+    border-bottom: 1px solid rgba(42,48,80,0.4);
+    align-items: flex-start;
+  }
+  .rec-item:last-child { border-bottom: none; }
+  .rec-num {
+    width: 22px; height: 22px;
+    background: rgba(79,142,247,0.2);
+    border: 1px solid rgba(79,142,247,0.4);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+
+  /* WARNING CARD */
+  .warning-card {
+    background: rgba(245,200,66,0.06);
+    border: 1px solid rgba(245,200,66,0.25);
+    border-radius: var(--radius);
+    padding: 16px 20px;
+    font-size: 0.82rem;
+    color: #c8b870;
+    line-height: 1.6;
+    margin-top: 20px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  /* CHART */
+  .chart-container {
+    position: relative;
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* PERIOD TABS */
+  .period-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+
+  .period-tab {
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--muted);
+    transition: all 0.2s;
+  }
+
+  .period-tab.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: white;
+  }
+
+  @media (max-width: 768px) {
+    .layout { flex-direction: column; height: auto; }
+    aside { width: 100%; height: auto; border-right: none; border-bottom: 1px solid var(--border); }
+    main { padding: 16px; }
+    .grid-2, .grid-3 { grid-template-columns: 1fr; }
+    .profile-header { flex-wrap: wrap; }
+    .global-badge { margin-left: 0; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-icon">📚</div>
+  <div>
+    <h1>Seguimiento Pedagógico</h1>
+    <p>Grado 10 Bachillerato — Estudiantes Repitentes</p>
+  </div>
+  <span class="period-badge">2025 · Trimestre 1</span>
+</header>
+
+<div class="layout">
+  <aside>
+    <h3>Estudiantes</h3>
+    <div id="student-list"></div>
+  </aside>
+
+  <main id="main-content">
+    <div class="welcome">
+      <div class="icon">🎓</div>
+      <h2>Selecciona un estudiante</h2>
+      <p>Elige un nombre del panel izquierdo<br>para ver su seguimiento completo</p>
+    </div>
+  </main>
+</div>
+
+<script>
+const STUDENTS = [
+  {
+    id: "keidy",
+    nombre: "Keidy Julieth Benitez",
+    grado: "10E",
+    periodo: "2025-T1",
+    initials: "KB",
+    color: "#4f8ef7",
+    semaforoGlobal: "amarillo",
+    semaforoTexto: "🟡 ATENCIÓN MODERADA",
+    areas: [
+      { area: "Cátedra y Emprendimiento", docente: "Maria Edith Molina", semaforo: "verde", estado: "Al día, muy buena actitud", fortalezas: "Juiciosa y dispuesta con las actividades" },
+      { area: "Matemáticas", docente: "Ricardo Galvis", semaforo: "rojo", estado: "Diagnóstico: 1.0/5.0 en guía inicial", fortalezas: "Muy introvertida, poco compromiso. Buena asistencia." },
+      { area: "Política/Economía", docente: "Andres M. Castro", semaforo: "gris", estado: "Sin datos disponibles", fortalezas: "—" },
+      { area: "Química", docente: "Aris Andrade", semaforo: "gris", estado: "Sin datos disponibles", fortalezas: "—" },
+      { area: "Religión/Filosofía", docente: "Juan Pablo Agudelo", semaforo: "verde", estado: "Notas al día", fortalezas: "Rendimiento académico impecable" },
+      { area: "Ética", docente: "Cristian García", semaforo: "gris", estado: "Sin datos disponibles", fortalezas: "—" },
+      { area: "Inglés", docente: "Gustavo Rojas", semaforo: "gris", estado: "Sin datos disponibles", fortalezas: "—" },
+      { area: "Sociales", docente: "Luis Cañaveral", semaforo: "amarillo", estado: "No demuestra actitud de cambio", fortalezas: "Puede ser más participativa y proactiva" },
+      { area: "Tecnología", docente: "Marlon Moreno", semaforo: "amarillo", estado: "Muy callada, sin participación", fortalezas: "—" },
+      { area: "Biología", docente: "Patricia Chanci", semaforo: "gris", estado: "Sin datos disponibles", fortalezas: "—" },
+      { area: "Edu. Física", docente: "Patricia Chanci", semaforo: "gris", estado: "Sin datos disponibles", fortalezas: "—" },
+      { area: "Artística", docente: "Julian Ramírez", semaforo: "rojo", estado: "Faltó el 19/02. Notas en 1.0 por inasistencia", fortalezas: "Debe asistir o presentar excusas" },
+      { area: "Física", docente: "Cristian Pérez", semaforo: "amarillo", estado: "En proceso de diagnóstico académico", fortalezas: "—" },
+    ],
+    radarData: [4, 1, 0, 0, 5, 0, 0, 2, 2, 0, 0, 1, 2],
+    radarLabels: ["Cátedra","Matemáticas","Política","Química","Religión","Ética","Inglés","Sociales","Tecnología","Biología","Edu.Fís","Artística","Física"],
+    riesgos: [
+      { icon: "🔴", texto: "Riesgo académico inmediato: Nota de 1.0/5.0 en Matemáticas desde el diagnóstico inicial" },
+      { icon: "🔴", texto: "Inasistencia con consecuencias: Falta en Artística ya generó calificaciones reprobadas" },
+      { icon: "⚠️", texto: "Actitud pasiva persistente: 3 docentes independientes reportan el mismo patrón (callada, sin participación)" },
+      { icon: "⚠️", texto: "Sin señales de cambio: En Sociales el docente señala explícitamente que no ha notado cambio de actitud — señal crítica para repitente" },
+    ],
+    realimentacion: "Keidy presenta un perfil académico mixto que genera preocupación moderada. Demuestra capacidades positivas en áreas donde se siente cómoda: en Cátedra muestra disposición y en Religión/Filosofía su rendimiento es descrito como impecable. Sin embargo, estos logros contrastan con un desempeño crítico en Matemáticas y con una inasistencia en Artística que ya le costó calificaciones en 1.0. El patrón más preocupante no es académico sino actitudinal: múltiples docentes coinciden en describirla como callada, introvertida y poco participativa, lo que sugiere posible desmotivación o bloqueo emocional.",
+    habitos: ["Retraimiento social constante", "Selectividad motivacional", "Buena asistencia general", "Sin iniciativa de cambio visible", "Compromiso en asignaturas de menor presión"],
+    recomendaciones: [
+      "Conversación individual urgente para explorar barreras emocionales o motivacionales",
+      "Plan de refuerzo inmediato en Matemáticas antes de que la brecha se amplíe",
+      "Comunicación con acudiente sobre el patrón de pasividad y la inasistencia en Artística",
+      "Asignarle un rol activo (aunque pequeño) en al menos una clase para romper el patrón de silencio",
+      "Seguimiento quincenal entre docentes para detectar si el patrón cambia",
+    ]
+  },
+  {
+    id: "sara",
+    nombre: "Sara Maria Lopez",
+    grado: "10E",
+    periodo: "2025-T1",
+    initials: "SL",
+    color: "#9b6ef7",
+    semaforoGlobal: "amarillo",
+    semaforoTexto: "🟡 ATENCIÓN MODERADA",
+    areas: [
+      { area: "Cátedra y Emprendimiento", docente: "Maria Edith Molina", semaforo: "verde", estado: "Al día, muy buena actitud", fortalezas: "Juiciosa y dispuesta con las actividades" },
+      { area: "Matemáticas", docente: "Ricardo Galvis", semaforo: "rojo", estado: "Diagnóstico: 1.0/5.0 en guía inicial", fortalezas: "Muy introvertida, poco compromiso. Buena asistencia." },
+      { area: "Política/Economía", docente: "Andres M. Castro", semaforo: "gris", estado: "Sin datos disponibles", fortalezas: "—" },
+      { area: "Química", docente: "Aris Andrade", semaforo: "gris", estado: "Sin datos disponibles", fortalezas: "—" },
+      { area: "Religión/Filosofía", docente: "Juan Pablo Agudelo", semaforo: "verde", estado: "Notas al día, rendimiento impecable", fortalezas: "Rendimiento académico impecable" },
+      { area: "Ética", docente: "Cristian García", semaforo: "gris", estado: "Sin datos disponibles", fortalezas: "—" },
+      { area: "Inglés", docente: "Gustavo Rojas", semaforo: "gris", estado: "Sin datos disponibles", fortalezas: "—" },
+      { area: "Sociales", docente: "Luis Cañaveral", semaforo: "amarillo", estado: "No demuestra actitud de cambio", fortalezas: "Puede ser más participativa y proactiva" },
+      { area: "Tecnología", docente: "Marlon Moreno", semaforo: "amarillo", estado: "Muy callada, sin participación", fortalezas: "—" },
+      { area: "Biología", docente: "Patricia Chanci", semaforo: "gris", estado: "Sin datos disponibles", fortalezas: "—" },
+      { area: "Edu. Física", docente: "Patricia Chanci", semaforo: "gris", estado: "Sin datos disponibles", fortalezas: "—" },
+      { area: "Artística", docente: "Julian Ramírez", semaforo: "rojo", estado: "Faltó el 19/02. Notas en 1.0 por inasistencia", fortalezas: "Debe asistir o presentar excusas" },
+      { area: "Física", docente: "Cristian Pérez", semaforo: "amarillo", estado: "En proceso de diagnóstico académico", fortalezas: "—" },
+    ],
+    radarData: [4, 1, 0, 0, 5, 0, 0, 2, 2, 0, 0, 1, 2],
+    radarLabels: ["Cátedra","Matemáticas","Política","Química","Religión","Ética","Inglés","Sociales","Tecnología","Biología","Edu.Fís","Artística","Física"],
+    riesgos: [
+      { icon: "🔴", texto: "Riesgo académico inmediato: Nota de 1.0/5.0 en Matemáticas desde el diagnóstico inicial" },
+      { icon: "🔴", texto: "Inasistencia con consecuencias: Falta en Artística ya generó calificaciones reprobadas" },
+      { icon: "⚠️", texto: "Actitud pasiva persistente: Múltiples docentes reportan el mismo patrón de silencio y baja participación" },
+      { icon: "⚠️", texto: "Sin señales de cambio: Siendo repitente, no muestra externamente voluntad de cambio" },
+      { icon: "🔍", texto: "Posible confusión en reportes: La similitud exacta con datos de otra estudiante sugiere verificar que cada docente diligenciara el reporte individualmente" },
+    ],
+    realimentacion: "Sara presenta un perfil muy similar al de Keidy en términos de reportes docentes, lo que puede indicar dinámicas comunes entre repitentes del mismo grado, o que algunos reportes fueron replicados sin diferenciar a las estudiantes — aspecto urgente a verificar. Al igual que Keidy, Sara muestra fortalezas en Cátedra y Religión/Filosofía, pero enfrenta dificultades en Matemáticas y ya tiene consecuencias por inasistencia en Artística. Como repitente, necesita intervenciones personalizadas que vayan más allá del refuerzo académico.",
+    habitos: ["Retraimiento social constante", "Selectividad motivacional", "Buena asistencia general", "Sin iniciativa de cambio visible", "Perfil similar a compañera repitente"],
+    recomendaciones: [
+      "Verificar con docentes si los reportes de Sara son individualizados — es urgente para garantizar seguimiento real",
+      "Conversación individual para explorar barreras emocionales propias, diferenciadas de otras estudiantes",
+      "Plan de refuerzo en Matemáticas de forma inmediata",
+      "Comunicación con acudiente sobre patrón de pasividad y consecuencias de inasistencia",
+      "Estrategia diferenciada respecto a Keidy, aunque el perfil sea similar",
+    ]
+  }
+];
+
+let activeChart = null;
+
+function getSemaforoColor(s) {
+  if (s === 'verde') return 'var(--green)';
+  if (s === 'amarillo') return 'var(--yellow)';
+  if (s === 'rojo') return 'var(--red)';
+  return 'var(--gray)';
+}
+
+function renderSidebar() {
+  const list = document.getElementById('student-list');
+  list.innerHTML = '';
+  STUDENTS.forEach((s, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'student-btn';
+    btn.id = `btn-${s.id}`;
+    btn.onclick = () => showStudent(s.id);
+    const color = s.semaforoGlobal === 'verde' ? '#2ecc8a' : s.semaforoGlobal === 'amarillo' ? '#f5c842' : '#f25c5c';
+    btn.innerHTML = `
+      <div class="avatar" style="background: linear-gradient(135deg, ${s.color}33, ${s.color}55); color: ${s.color};">${s.initials}</div>
+      <div class="student-info-sidebar">
+        <div class="student-name-short">${s.nombre.split(' ').slice(0,2).join(' ')}</div>
+        <div class="semaforo-mini" style="color: ${color}">● ${s.semaforoGlobal.toUpperCase()}</div>
+      </div>
+    `;
+    list.appendChild(btn);
+  });
+}
+
+function showStudent(id) {
+  // Update active button
+  document.querySelectorAll('.student-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(`btn-${id}`).classList.add('active');
+
+  const s = STUDENTS.find(x => x.id === id);
+  const badgeClass = `badge-${s.semaforoGlobal}`;
+
+  const verdeCount = s.areas.filter(a => a.semaforo === 'verde').length;
+  const amarilloCount = s.areas.filter(a => a.semaforo === 'amarillo').length;
+  const rojoCount = s.areas.filter(a => a.semaforo === 'rojo').length;
+  const sinDatos = s.areas.filter(a => a.semaforo === 'gris').length;
+
+  const areasRows = s.areas.map(a => `
+    <tr>
+      <td class="area-cell"><span class="dot dot-${a.semaforo}"></span>${a.area}</td>
+      <td class="docente-cell">${a.docente}</td>
+      <td class="estado-cell">${a.estado}</td>
+    </tr>
+  `).join('');
+
+  const riesgosHTML = s.riesgos.map(r => `
+    <div class="risk-item">
+      <span class="risk-icon">${r.icon}</span>
+      <span class="risk-text">${r.texto}</span>
+    </div>
+  `).join('');
+
+  const habitosHTML = s.habitos.map(h => `<span class="habit-tag">${h}</span>`).join('');
+
+  const recsHTML = s.recomendaciones.map((r, i) => `
+    <div class="rec-item">
+      <span class="rec-num">${i+1}</span>
+      <span>${r}</span>
+    </div>
+  `).join('');
+
+  const main = document.getElementById('main-content');
+  main.innerHTML = `
+    <div class="period-tabs">
+      <button class="period-tab active">2025 · T1</button>
+      <button class="period-tab" style="opacity:0.4; cursor:default">T2 (pendiente)</button>
+      <button class="period-tab" style="opacity:0.4; cursor:default">T3 (pendiente)</button>
+    </div>
+
+    <div class="profile-header">
+      <div class="profile-avatar" style="background: linear-gradient(135deg, ${s.color}33, ${s.color}55); color: ${s.color};">${s.initials}</div>
+      <div>
+        <div class="profile-name">${s.nombre}</div>
+        <div class="profile-meta">Grado ${s.grado} · Período ${s.periodo} · Estudiante Repitente</div>
+      </div>
+      <div class="global-badge ${badgeClass}">
+        Semáforo Global<br>${s.semaforoTexto}
+      </div>
+    </div>
+
+    <div class="grid-3">
+      <div class="card" style="border-top: 3px solid var(--green)">
+        <div class="card-title">🟢 Áreas en Verde</div>
+        <div style="font-size:2rem; font-weight:700; color: var(--green)">${verdeCount}</div>
+        <div style="font-size:0.75rem; color: var(--muted); margin-top:4px">Áreas con buen desempeño</div>
+      </div>
+      <div class="card" style="border-top: 3px solid var(--yellow)">
+        <div class="card-title">🟡 Áreas en Amarillo</div>
+        <div style="font-size:2rem; font-weight:700; color: var(--yellow)">${amarilloCount}</div>
+        <div style="font-size:0.75rem; color: var(--muted); margin-top:4px">Áreas que requieren atención</div>
+      </div>
+      <div class="card" style="border-top: 3px solid var(--red)">
+        <div class="card-title">🔴 Áreas en Rojo</div>
+        <div style="font-size:2rem; font-weight:700; color: var(--red)">${rojoCount}</div>
+        <div style="font-size:0.75rem; color: var(--muted); margin-top:4px">Áreas de riesgo inmediato</div>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-title">📊 Desempeño por Área</div>
+        <div class="chart-container">
+          <canvas id="radarChart"></canvas>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">⚠️ Señales Tempranas de Riesgo</div>
+        ${riesgosHTML}
+      </div>
+    </div>
+
+    <div class="card" style="margin-bottom: 20px">
+      <div class="card-title">📋 Estado por Área y Docente</div>
+      <table class="areas-table">
+        <thead>
+          <tr>
+            <th>Área</th>
+            <th>Docente</th>
+            <th>Estado Académico</th>
+          </tr>
+        </thead>
+        <tbody>${areasRows}</tbody>
+      </table>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-title">💬 Realimentación General</div>
+        <p class="feedback-text">${s.realimentacion}</p>
+      </div>
+      <div class="card">
+        <div class="card-title">🔁 Hábitos y Patrones</div>
+        <div style="margin-bottom: 16px">${habitosHTML}</div>
+        <div class="card-title" style="margin-top:16px">✅ Recomendaciones Pedagógicas</div>
+        ${recsHTML}
+      </div>
+    </div>
+
+    <div class="warning-card">
+      <span style="font-size:20px">⚠️</span>
+      <div><strong>Nota sobre datos incompletos:</strong> Varios docentes reportaron "NA" en sus observaciones (Política/Economía, Química, Ética, Inglés, Biología, Educación Física). Se recomienda hacer seguimiento para obtener información completa en el próximo corte trimestral.</div>
+    </div>
+  `;
+
+  // Render radar chart
+  setTimeout(() => {
+    const ctx = document.getElementById('radarChart');
+    if (!ctx) return;
+    if (activeChart) { activeChart.destroy(); }
+    activeChart = new Chart(ctx, {
+      type: 'radar',
+      data: {
+        labels: s.radarLabels,
+        datasets: [{
+          label: 'Desempeño estimado',
+          data: s.radarData,
+          backgroundColor: `${s.color}22`,
+          borderColor: s.color,
+          borderWidth: 2,
+          pointBackgroundColor: s.color,
+          pointRadius: 4,
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          r: {
+            min: 0, max: 5,
+            ticks: { display: false, stepSize: 1 },
+            grid: { color: 'rgba(255,255,255,0.07)' },
+            angleLines: { color: 'rgba(255,255,255,0.07)' },
+            pointLabels: {
+              color: '#8892b0',
+              font: { size: 9, family: 'Sora' }
+            }
+          }
+        },
+        plugins: {
+          legend: { display: false }
+        }
+      }
+    });
+  }, 100);
+}
+
+renderSidebar();
+</script>
+</body>
+</html>
