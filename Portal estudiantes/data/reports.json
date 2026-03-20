@@ -1,0 +1,2379 @@
+{
+    "generatedAt":  "2026-03-20T18:34:55-05:00",
+    "source":  {
+                   "inputDirectory":  "Informes Estudiantiles",
+                   "outputDirectory":  "Portal estudiantes",
+                   "markdownFiles":  [
+                                         "Informes Estudiantiles\\2026-1\\seguimiento_2026_T1.md"
+                                     ],
+                   "ignoredFiles":  [
+                                        {
+                                            "path":  "Informes Estudiantiles\\2026-1\\seguimiento academico.xlsx",
+                                            "reason":  "ExtensiÃ³n no Markdown"
+                                        }
+                                    ]
+               },
+    "document":  {
+                     "title":  "Seguimiento Pedagógico — 10E",
+                     "period":  "2026 - Trimestre 1",
+                     "institution":  "NO ESPECIFICADO",
+                     "observations":  [
+                                          "Se procesó un único Excel fuente: `seguimiento academico.xlsx`, ubicado en `Informes Estudiantiles/2026-1`; el trimestre 1 está explícito en las hojas y el año 2026 se sustenta por la carpeta fuente.",
+                                          "No se encontraron archivos Markdown históricos confiables en `Informes Estudiantiles`; por eso no se incluye la sección de evolución respecto al período anterior.",
+                                          "`Jhony Alejandro Gomez` presenta una estructura de tabla alterada con columna adicional; `Astrid Juliana Correa` y `Jarol Esteban Alvares` tienen celdas extra aisladas. La normalización conservó solo evidencia pedagógica interpretable.",
+                                          "En Física se repite con frecuencia la frase `en proceso de diagnostico academico`; se clasifica como `⚪ GRIS` por falta de evidencia suficiente para semaforizar desempeño.",
+                                          "En `Santiago Rico` y `David Rico`, Religión/Filosofía registra `no me acuerdo`; ese texto se trató como registro no interpretable y quedó en `⚪ GRIS`.",
+                                          "Hay entre 4 y 11 áreas en `⚪ GRIS` por estudiante, según ausencia de reporte o evidencia insuficiente."
+                                      ]
+                 },
+    "derived":  {
+                    "totalStudents":  14,
+                    "globalSignalCounts":  {
+                                               "VERDE":  2,
+                                               "AMARILLO":  0,
+                                               "ROJO":  12,
+                                               "GRIS":  0
+                                           },
+                    "areaSignalTotals":  {
+                                             "VERDE":  31,
+                                             "AMARILLO":  30,
+                                             "ROJO":  23,
+                                             "GRIS":  98
+                                         },
+                    "criticalAreas":  [
+                                          {
+                                              "area":  "Matematicas",
+                                              "total":  11,
+                                              "red":  11,
+                                              "yellow":  0
+                                          },
+                                          {
+                                              "area":  "Sociales",
+                                              "total":  9,
+                                              "red":  3,
+                                              "yellow":  6
+                                          },
+                                          {
+                                              "area":  "Catedra y emprendimiento",
+                                              "total":  8,
+                                              "red":  3,
+                                              "yellow":  5
+                                          },
+                                          {
+                                              "area":  "Artistica",
+                                              "total":  8,
+                                              "red":  5,
+                                              "yellow":  3
+                                          },
+                                          {
+                                              "area":  "Etica",
+                                              "total":  7,
+                                              "red":  0,
+                                              "yellow":  7
+                                          },
+                                          {
+                                              "area":  "Tecnologia",
+                                              "total":  4,
+                                              "red":  0,
+                                              "yellow":  4
+                                          },
+                                          {
+                                              "area":  "Religion/Filosofia",
+                                              "total":  3,
+                                              "red":  0,
+                                              "yellow":  3
+                                          },
+                                          {
+                                              "area":  "Quimica",
+                                              "total":  2,
+                                              "red":  1,
+                                              "yellow":  1
+                                          },
+                                          {
+                                              "area":  "Politicas/Economia",
+                                              "total":  1,
+                                              "red":  0,
+                                              "yellow":  1
+                                          }
+                                      ],
+                    "dimensionLevelTotals":  {
+                                                 "Riesgo de Deserción":  {
+                                                                             "MODERADO":  8,
+                                                                             "CRÍTICO":  1,
+                                                                             "BAJO":  1,
+                                                                             "ALTO":  4
+                                                                         },
+                                                 "Dinámica Social/Grupal":  {
+                                                                                "DEFICIENTE":  1,
+                                                                                "REGULAR":  11,
+                                                                                "BUENA":  2
+                                                                            },
+                                                 "Madurez Emocional":  {
+                                                                           "MEDIA":  9,
+                                                                           "BAJA":  4,
+                                                                           "ALTA":  1
+                                                                       },
+                                                 "Compromiso Académico":  {
+                                                                              "MEDIO":  7,
+                                                                              "BAJO":  6,
+                                                                              "ALTO":  1
+                                                                          }
+                                             }
+                },
+    "students":  [
+                     {
+                         "id":  "astrid-juliana-correa",
+                         "name":  "Astrid Juliana Correa",
+                         "grade":  "10E",
+                         "period":  "2026-T1",
+                         "globalSignal":  {
+                                              "label":  "ROJO",
+                                              "summary":  "**🔴 ROJO** — Matemáticas concentra la alerta crítica del período, aunque en varias áreas se observan señales favorables de cambio y cumplimiento."
+                                          },
+                         "areaSignals":  [
+                                             {
+                                                 "area":  "Catedra y emprendimiento",
+                                                 "teacher":  "Maria edith Molina",
+                                                 "signal":  "VERDE",
+                                                 "signalText":  "ðŸŸ¢ VERDE",
+                                                 "status":  "Excelente actitud y fortalecimiento visible en su proceso."
+                                             },
+                                             {
+                                                 "area":  "Matematicas",
+                                                 "teacher":  "Ricardo Galvis",
+                                                 "signal":  "ROJO",
+                                                 "signalText":  "🔴 ROJO",
+                                                 "status":  "Quiz diagnóstico en 1; buena actitud, pero habla mucho y se distrae."
+                                             },
+                                             {
+                                                 "area":  "Politicas/Economia",
+                                                 "teacher":  "Andres Mauricio Castro",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Quimica",
+                                                 "teacher":  "Aris Andrade",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Religion/Filosofia",
+                                                 "teacher":  "Juan Pablo Agudelo",
+                                                 "signal":  "VERDE",
+                                                 "signalText":  "🟢 VERDE",
+                                                 "status":  "Notas al día y mejoría positiva en su desempeño."
+                                             },
+                                             {
+                                                 "area":  "Etica",
+                                                 "teacher":  "Cristian Garcia",
+                                                 "signal":  "VERDE",
+                                                 "signalText":  "ðŸŸ¢ VERDE",
+                                                 "status":  "Participa, cumple con sus deberes y se muestra atenta."
+                                             },
+                                             {
+                                                 "area":  "Ingles",
+                                                 "teacher":  "Gustavo Rojas",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Sociales",
+                                                 "teacher":  "Luis Cañaveral",
+                                                 "signal":  "VERDE",
+                                                 "signalText":  "🟢 VERDE",
+                                                 "status":  "Se observa más activa, atenta y con actitud de cambio."
+                                             },
+                                             {
+                                                 "area":  "Tecnologia",
+                                                 "teacher":  "Marlon Solano",
+                                                 "signal":  "VERDE",
+                                                 "signalText":  "🟢 VERDE",
+                                                 "status":  "Buena disposición para mejorar y participación en clase."
+                                             },
+                                             {
+                                                 "area":  "Biologia",
+                                                 "teacher":  "Patricia Chanci",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Edu. Fisica",
+                                                 "teacher":  "Patricia Chancin",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Artistica",
+                                                 "teacher":  "Julian Ramirez",
+                                                 "signal":  "VERDE",
+                                                 "signalText":  "ðŸŸ¢ VERDE",
+                                                 "status":  "Cumple con sus actividades y mantiene buen comportamiento."
+                                             },
+                                             {
+                                                 "area":  "Fisica",
+                                                 "teacher":  "Cristian Monsalve",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Diagnóstico en curso; sin evidencia suficiente."
+                                             }
+                                         ],
+                         "feedbackParagraphs":  [
+                                                    "Astrid muestra un punto de apoyo importante en varias asignaturas: Cátedra y emprendimiento, Religión/Filosofía, Ética, Sociales, Tecnología y Artística reportan actitud favorable, participación o cumplimiento. Esto permite leer una estudiante con capacidad de respuesta cuando el seguimiento es claro y la consigna está bien sostenida.",
+                                                    "La alerta principal está en Matemáticas por la nota diagnóstica baja y la distracción en clase. El corte deja 6 áreas en `⚪ GRIS`, por lo que conviene sostener los avances ya visibles y ampliar evidencia en las asignaturas sin reporte antes de cerrar juicios más amplios."
+                                                ],
+                         "dimensions":  [
+                                            {
+                                                "name":  "Compromiso Académico",
+                                                "level":  "MEDIO",
+                                                "summary":  "Hay señales consistentes de cumplimiento y mejora en varias áreas. Sin embargo, Matemáticas todavía muestra un rezago concreto que exige refuerzo y seguimiento."
+                                            },
+                                            {
+                                                "name":  "Madurez Emocional",
+                                                "level":  "MEDIA",
+                                                "summary":  "La evidencia actual muestra disposición al cambio y mejor comportamiento en distintos espacios. Aun así, necesita fortalecer autorregulación para sostener la atención cuando la clase le exige mayor foco."
+                                            },
+                                            {
+                                                "name":  "Riesgo de Deserción",
+                                                "level":  "MODERADO",
+                                                "summary":  "No hay reportes de ausentismo o desvinculación sostenida. El riesgo se sostiene por la repitencia y por la necesidad de intervenir a tiempo el rezago en Matemáticas."
+                                            },
+                                            {
+                                                "name":  "Dinámica Social/Grupal",
+                                                "level":  "BUENA",
+                                                "summary":  "Participa y se integra mejor que en registros previos del mismo corte descriptivo docente. El principal ajuste está en reducir conversaciones que la distraen del trabajo académico."
+                                            }
+                                        ],
+                         "earlyRiskSignals":  [
+                                                  "⚠️ Nota diagnóstica de 1 en Matemáticas.",
+                                                  "⚠️ Habla mucho en clase y requiere controlar distractores.",
+                                                  "⚠️ Seis áreas continúan sin evidencia suficiente en el registro."
+                                              ],
+                         "behaviorPatterns":  [
+                                                  "Responde bien cuando recibe acompañamiento y criterios claros.",
+                                                  "Mantiene buena actitud en varias áreas del plan de estudios.",
+                                                  "Necesita consolidar atención sostenida en clases de mayor exigencia académica."
+                                              ],
+                         "recommendations":  [
+                                                 "Priorizar un refuerzo semanal breve en Matemáticas con metas verificables.",
+                                                 "Ubicarla en un puesto que reduzca distractores y facilite concentración.",
+                                                 "Mantener reconocimiento explícito de sus avances en Ética, Sociales y Tecnología.",
+                                                 "Solicitar registro complementario en las áreas que siguen en `⚪ GRIS`.",
+                                                 "Revisar quincenalmente si la mejora de participación se sostiene o retrocede."
+                                             ],
+                         "derived":  {
+                                         "areaColorCounts":  {
+                                                                 "VERDE":  6,
+                                                                 "AMARILLO":  0,
+                                                                 "ROJO":  1,
+                                                                 "GRIS":  6
+                                                             },
+                                         "grayAreas":  6,
+                                         "criticalAreas":  1,
+                                         "areasWithEvidence":  7
+                                     },
+                         "source":  {
+                                        "file":  "Informes Estudiantiles\\2026-1\\seguimiento_2026_T1.md",
+                                        "heading":  "Astrid Juliana Correa"
+                                    }
+                     },
+                     {
+                         "id":  "daniela-rico-rivera",
+                         "name":  "Daniela Rico Rivera",
+                         "grade":  "10E",
+                         "period":  "2026-T1",
+                         "globalSignal":  {
+                                              "label":  "ROJO",
+                                              "summary":  "**🔴 ROJO** — El principal riesgo está en Matemáticas; además, hay señales de participación baja en áreas donde sí cumple."
+                                          },
+                         "areaSignals":  [
+                                             {
+                                                 "area":  "Catedra y emprendimiento",
+                                                 "teacher":  "Maria edith Molina",
+                                                 "signal":  "VERDE",
+                                                 "signalText":  "🟢 VERDE",
+                                                 "status":  "Excelente desempeño, buena asistencia y actitud favorable."
+                                             },
+                                             {
+                                                 "area":  "Matematicas",
+                                                 "teacher":  "Ricardo Galvis",
+                                                 "signal":  "ROJO",
+                                                 "signalText":  "🔴 ROJO",
+                                                 "status":  "Quiz diagnóstico en 1 y falta de compromiso académico."
+                                             },
+                                             {
+                                                 "area":  "Politicas/Economia",
+                                                 "teacher":  "Andres Mauricio Castro",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Quimica",
+                                                 "teacher":  "Aris Andrade",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Religion/Filosofia",
+                                                 "teacher":  "Juan Pablo Agudelo",
+                                                 "signal":  "VERDE",
+                                                 "signalText":  "🟢 VERDE",
+                                                 "status":  "Notas al día y mejoría en sus actividades."
+                                             },
+                                             {
+                                                 "area":  "Etica",
+                                                 "teacher":  "Cristian Garcia",
+                                                 "signal":  "AMARILLO",
+                                                 "signalText":  "🟡 AMARILLO",
+                                                 "status":  "No entregó el primer taller y necesita participar más."
+                                             },
+                                             {
+                                                 "area":  "Ingles",
+                                                 "teacher":  "Gustavo Rojas",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Sociales",
+                                                 "teacher":  "Luis Cañaveral",
+                                                 "signal":  "AMARILLO",
+                                                 "signalText":  "🟡 AMARILLO",
+                                                 "status":  "Cumple, pero sigue muy callada y poco participativa."
+                                             },
+                                             {
+                                                 "area":  "Tecnologia",
+                                                 "teacher":  "Marlon Solano",
+                                                 "signal":  "AMARILLO",
+                                                 "signalText":  "ðŸŸ¡ AMARILLO",
+                                                 "status":  "Es juiciosa, aunque se observa distante del grupo."
+                                             },
+                                             {
+                                                 "area":  "Biologia",
+                                                 "teacher":  "Patricia Chanci",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Edu. Fisica",
+                                                 "teacher":  "Patricia Chancin",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Artistica",
+                                                 "teacher":  "Julian Ramirez",
+                                                 "signal":  "VERDE",
+                                                 "signalText":  "ðŸŸ¢ VERDE",
+                                                 "status":  "Presenta actividades a tiempo y trabaja en clase."
+                                             },
+                                             {
+                                                 "area":  "Fisica",
+                                                 "teacher":  "Cristian Monsalve",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Diagnóstico en curso; sin evidencia suficiente."
+                                             }
+                                         ],
+                         "feedbackParagraphs":  [
+                                                    "Daniela conserva fortalezas importantes en Cátedra y emprendimiento, Religión/Filosofía y Artística, donde la evidencia describe cumplimiento, trabajo en clase y buena disposición. Esa base es relevante porque muestra que sí cuenta con recursos para responder positivamente al acompañamiento.",
+                                                    "La dificultad central se ubica en Matemáticas y se complementa con baja participación en Sociales, Tecnología y Ética. El corte deja 6 áreas en `⚪ GRIS`, de modo que la prioridad es intervenir el rezago actual sin perder de vista sus fortalezas ya consolidadas."
+                                                ],
+                         "dimensions":  [
+                                            {
+                                                "name":  "Compromiso Académico",
+                                                "level":  "MEDIO",
+                                                "summary":  "Tiene resultados favorables en varias áreas y cumple en espacios concretos. No obstante, el bajo resultado en Matemáticas y el incumplimiento puntual en Ética reducen la consistencia del período."
+                                            },
+                                            {
+                                                "name":  "Madurez Emocional",
+                                                "level":  "MEDIA",
+                                                "summary":  "Se observa una estudiante juiciosa y reservada, con actitud estable en varios contextos. Requiere más seguridad para participar y sostener presencia activa frente al grupo."
+                                            },
+                                            {
+                                                "name":  "Riesgo de Deserción",
+                                                "level":  "MODERADO",
+                                                "summary":  "No hay evidencia de ausentismo relevante, pero sí señales de desconexión académica focalizada. La repitencia y la baja participación justifican seguimiento preventivo."
+                                            },
+                                            {
+                                                "name":  "Dinámica Social/Grupal",
+                                                "level":  "REGULAR",
+                                                "summary":  "La relación con el grupo parece distante más que conflictiva. Necesita aumentar participación sin forzar exposiciones que la bloqueen."
+                                            }
+                                        ],
+                         "earlyRiskSignals":  [
+                                                  "⚠️ Nota diagnóstica de 1 en Matemáticas.",
+                                                  "⚠️ No entrega del primer taller en Ética.",
+                                                  "⚠️ Participación reducida y distancia frente al grupo en Sociales y Tecnología."
+                                              ],
+                         "behaviorPatterns":  [
+                                                  "Cumple y trabaja en clase cuando la tarea está bien delimitada.",
+                                                  "Tiende a mantenerse callada incluso cuando realiza sus actividades.",
+                                                  "Sostiene mejor desempeño en áreas con seguimiento más estructurado."
+                                              ],
+                         "recommendations":  [
+                                                 "Diseñar un plan corto de refuerzo en Matemáticas con revisión semanal.",
+                                                 "Verificar entrega y recuperación del taller pendiente de Ética.",
+                                                 "Acordar metas pequeñas de participación en Sociales y Tecnología.",
+                                                 "Reconocer sus avances en las áreas donde ya muestra constancia.",
+                                                 "Completar evidencia docente en las asignaturas que siguen en `⚪ GRIS`."
+                                             ],
+                         "derived":  {
+                                         "areaColorCounts":  {
+                                                                 "VERDE":  3,
+                                                                 "AMARILLO":  3,
+                                                                 "ROJO":  1,
+                                                                 "GRIS":  6
+                                                             },
+                                         "grayAreas":  6,
+                                         "criticalAreas":  1,
+                                         "areasWithEvidence":  7
+                                     },
+                         "source":  {
+                                        "file":  "Informes Estudiantiles\\2026-1\\seguimiento_2026_T1.md",
+                                        "heading":  "Daniela Rico Rivera"
+                                    }
+                     },
+                     {
+                         "id":  "david-rico",
+                         "name":  "David Rico",
+                         "grade":  "10E",
+                         "period":  "2026-T1",
+                         "globalSignal":  {
+                                              "label":  "VERDE",
+                                              "summary":  "**🟢 VERDE** — Las áreas con evidencia disponible son favorables, aunque el registro del período sigue siendo muy incompleto."
+                                          },
+                         "areaSignals":  [
+                                             {
+                                                 "area":  "Catedra y emprendimiento",
+                                                 "teacher":  "Maria edith Molina",
+                                                 "signal":  "VERDE",
+                                                 "signalText":  "🟢 VERDE",
+                                                 "status":  "Está al día y mantiene buena actitud y comportamiento."
+                                             },
+                                             {
+                                                 "area":  "Matematicas",
+                                                 "teacher":  "Ricardo Galvis",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Politicas/Economia",
+                                                 "teacher":  "Andres Mauricio Castro",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Quimica",
+                                                 "teacher":  "Aris Andrade",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Religion/Filosofia",
+                                                 "teacher":  "Juan Pablo Agudelo",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Registro no interpretable; sin evidencia suficiente."
+                                             },
+                                             {
+                                                 "area":  "Etica",
+                                                 "teacher":  "Cristian Garcia",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Ingles",
+                                                 "teacher":  "Gustavo Rojas",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Sociales",
+                                                 "teacher":  "Luis Cañaveral",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Tecnologia",
+                                                 "teacher":  "Marlon Solano",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Biologia",
+                                                 "teacher":  "Patricia Chanci",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Edu. Fisica",
+                                                 "teacher":  "Patricia Chancin",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Artistica",
+                                                 "teacher":  "Julian Ramirez",
+                                                 "signal":  "VERDE",
+                                                 "signalText":  "ðŸŸ¢ VERDE",
+                                                 "status":  "Trabaja en clase y presenta trabajos."
+                                             },
+                                             {
+                                                 "area":  "Fisica",
+                                                 "teacher":  "Cristian Monsalve",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Diagnóstico en curso; sin evidencia suficiente."
+                                             }
+                                         ],
+                         "feedbackParagraphs":  [
+                                                    "Con la evidencia disponible, David presenta un corte favorable en Cátedra y emprendimiento y en Artística, donde se reportan cumplimiento, trabajo en clase y buena actitud. No aparecen alertas conductuales ni académicas críticas en las áreas que sí fueron diligenciadas.",
+                                                    "El análisis debe mantenerse prudente porque el estudiante tiene 11 áreas en `⚪ GRIS`, incluyendo un registro no interpretable en Religión/Filosofía. La prioridad no es corregir una alerta grave actual, sino completar información y sostener los hábitos positivos ya observados."
+                                                ],
+                         "dimensions":  [
+                                            {
+                                                "name":  "Compromiso Académico",
+                                                "level":  "MEDIO",
+                                                "summary":  "Las áreas con evidencia muestran disposición favorable y cumplimiento. Sin embargo, el alto número de vacíos impide afirmar consistencia sostenida en todo el plan de estudios."
+                                            },
+                                            {
+                                                "name":  "Madurez Emocional",
+                                                "level":  "MEDIA",
+                                                "summary":  "No hay reportes de conflicto, bloqueo o relación problemática con docentes y pares. La lectura actual es estable, aunque limitada por la poca completitud del registro."
+                                            },
+                                            {
+                                                "name":  "Riesgo de Deserción",
+                                                "level":  "MODERADO",
+                                                "summary":  "No se observan señales directas de desvinculación en este corte. Aun así, por la repitencia y la baja cantidad de datos confiables, conviene un seguimiento preventivo."
+                                            },
+                                            {
+                                                "name":  "Dinámica Social/Grupal",
+                                                "level":  "REGULAR",
+                                                "summary":  "La evidencia existente no muestra conflictos y sugiere trabajo adecuado en clase. Falta información suficiente para afirmar una integración grupal plenamente sostenida."
+                                            }
+                                        ],
+                         "earlyRiskSignals":  [
+                                                  "⚠️ Once áreas continúan sin evidencia suficiente.",
+                                                  "⚠️ El registro de Religión/Filosofía no es interpretable pedagógicamente.",
+                                                  "⚠️ La falta de información puede ocultar rezagos si no se completa a tiempo."
+                                              ],
+                         "behaviorPatterns":  [
+                                                  "Mantiene buena actitud en los espacios donde sí fue observado.",
+                                                  "Trabaja en clase y presenta productos en Artística.",
+                                                  "Requiere mayor trazabilidad docente para confirmar continuidad del proceso."
+                                              ],
+                         "recommendations":  [
+                                                 "Completar reportes docentes en las áreas actualmente en `⚪ GRIS`.",
+                                                 "Sostener las rutinas de cumplimiento observadas en Cátedra y Artística.",
+                                                 "Verificar en tutoría si existen vacíos no registrados en otras asignaturas.",
+                                                 "Evitar interpretar la ausencia de dato como ausencia de riesgo o de avance.",
+                                                 "Revisar nuevamente el caso en el siguiente corte con evidencia más completa."
+                                             ],
+                         "derived":  {
+                                         "areaColorCounts":  {
+                                                                 "VERDE":  2,
+                                                                 "AMARILLO":  0,
+                                                                 "ROJO":  0,
+                                                                 "GRIS":  11
+                                                             },
+                                         "grayAreas":  11,
+                                         "criticalAreas":  0,
+                                         "areasWithEvidence":  2
+                                     },
+                         "source":  {
+                                        "file":  "Informes Estudiantiles\\2026-1\\seguimiento_2026_T1.md",
+                                        "heading":  "David Rico"
+                                    }
+                     },
+                     {
+                         "id":  "emanuel-cardona-calderon",
+                         "name":  "Emanuel Cardona Calderon",
+                         "grade":  "10E",
+                         "period":  "2026-T1",
+                         "globalSignal":  {
+                                              "label":  "ROJO",
+                                              "summary":  "**🔴 ROJO** — Matemáticas y Artística muestran señales críticas, con alertas adicionales de comportamiento y concentración en otras áreas."
+                                          },
+                         "areaSignals":  [
+                                             {
+                                                 "area":  "Catedra y emprendimiento",
+                                                 "teacher":  "Maria edith Molina",
+                                                 "signal":  "AMARILLO",
+                                                 "signalText":  "🟡 AMARILLO",
+                                                 "status":  "Requiere mejorar actitud de clase y acumula varios llamados de atención."
+                                             },
+                                             {
+                                                 "area":  "Matematicas",
+                                                 "teacher":  "Ricardo Galvis",
+                                                 "signal":  "ROJO",
+                                                 "signalText":  "🔴 ROJO",
+                                                 "status":  "Quiz diagnóstico en 1, aunque se reportan asistencia y actitud aceptables."
+                                             },
+                                             {
+                                                 "area":  "Politicas/Economia",
+                                                 "teacher":  "Andres Mauricio Castro",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Quimica",
+                                                 "teacher":  "Aris Andrade",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Religion/Filosofia",
+                                                 "teacher":  "Juan Pablo Agudelo",
+                                                 "signal":  "AMARILLO",
+                                                 "signalText":  "🟡 AMARILLO",
+                                                 "status":  "Mantiene notas al día, pero necesita más concentración."
+                                             },
+                                             {
+                                                 "area":  "Etica",
+                                                 "teacher":  "Cristian Garcia",
+                                                 "signal":  "AMARILLO",
+                                                 "signalText":  "🟡 AMARILLO",
+                                                 "status":  "Se solicita mayor participación en clase."
+                                             },
+                                             {
+                                                 "area":  "Ingles",
+                                                 "teacher":  "Gustavo Rojas",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Sociales",
+                                                 "teacher":  "Luis Cañaveral",
+                                                 "signal":  "AMARILLO",
+                                                 "signalText":  "🟡 AMARILLO",
+                                                 "status":  "Quiere mejorar, pero su actitud sigue siendo irregular."
+                                             },
+                                             {
+                                                 "area":  "Tecnologia",
+                                                 "teacher":  "Marlon Solano",
+                                                 "signal":  "VERDE",
+                                                 "signalText":  "ðŸŸ¢ VERDE",
+                                                 "status":  "Se observa cambio positivo y buena actitud."
+                                             },
+                                             {
+                                                 "area":  "Biologia",
+                                                 "teacher":  "Patricia Chanci",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Edu. Fisica",
+                                                 "teacher":  "Patricia Chancin",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Artistica",
+                                                 "teacher":  "Julian Ramirez",
+                                                 "signal":  "ROJO",
+                                                 "signalText":  "ðŸ”´ ROJO",
+                                                 "status":  "No presenta trabajos y acumula notas muy bajas."
+                                             },
+                                             {
+                                                 "area":  "Fisica",
+                                                 "teacher":  "Cristian Monsalve",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Diagnóstico en curso; sin evidencia suficiente."
+                                             }
+                                         ],
+                         "feedbackParagraphs":  [
+                                                    "Emanuel combina señales de mejor disposición en Religión/Filosofía y Tecnología con dificultades que siguen afectando la continuidad de su proceso. El registro muestra que sí puede responder positivamente, pero todavía no logra sostener ese avance en las áreas de mayor exigencia o control de entregas.",
+                                                    "La prioridad está en corregir el bajo resultado de Matemáticas, recuperar Artística y regular la conducta de aula para proteger el tiempo efectivo de aprendizaje. El corte deja 5 áreas en `⚪ GRIS`, por lo que también se requiere más evidencia antes de ampliar conclusiones sobre otras materias."
+                                                ],
+                         "dimensions":  [
+                                            {
+                                                "name":  "Compromiso Académico",
+                                                "level":  "BAJO",
+                                                "summary":  "Hay cumplimiento parcial en algunas áreas, pero persisten resultados críticos y trabajos no presentados. El esfuerzo no se traduce aún en consistencia académica suficiente."
+                                            },
+                                            {
+                                                "name":  "Madurez Emocional",
+                                                "level":  "MEDIA",
+                                                "summary":  "Se observan señales de disposición al cambio, aunque todavía necesita mejorar autocontrol, concentración y respuesta a normas básicas de aula. No hay evidencia para plantear algo más allá de esa autorregulación escolar."
+                                            },
+                                            {
+                                                "name":  "Riesgo de Deserción",
+                                                "level":  "ALTO",
+                                                "summary":  "No se reporta inasistencia grave, pero la combinación de repitencia, áreas críticas y bajo control conductual eleva el riesgo académico si no se interviene pronto. La alerta es preventiva y pedagógica, no diagnóstica."
+                                            },
+                                            {
+                                                "name":  "Dinámica Social/Grupal",
+                                                "level":  "REGULAR",
+                                                "summary":  "Participa cuando se lo propone, pero la conversación y la distracción siguen interfiriendo con su trabajo. Requiere límites consistentes y seguimiento cercano."
+                                            }
+                                        ],
+                         "earlyRiskSignals":  [
+                                                  "⚠️ Trabajos no presentados y notas muy bajas en Artística.",
+                                                  "⚠️ Quiz diagnóstico en 1 en Matemáticas.",
+                                                  "⚠️ Llamados de atención reiterados por actitud y foco en clase."
+                                              ],
+                         "behaviorPatterns":  [
+                                                  "Responde mejor cuando la consigna es corta y el seguimiento es directo.",
+                                                  "Alterna momentos de buena disposición con pérdida rápida de concentración.",
+                                                  "Necesita convertir la intención de mejora en cumplimiento sostenido."
+                                              ],
+                         "recommendations":  [
+                                                 "Implementar un plan semanal de recuperación de Artística con fechas explícitas.",
+                                                 "Reforzar Matemáticas con ejercicios breves y revisión de errores frecuentes.",
+                                                 "Acordar una meta concreta de participación y conducta por clase.",
+                                                 "Sostener el refuerzo positivo en Tecnología y Religión/Filosofía.",
+                                                 "Revisar cada quince días avances, pendientes y ajustes con coordinación."
+                                             ],
+                         "derived":  {
+                                         "areaColorCounts":  {
+                                                                 "VERDE":  1,
+                                                                 "AMARILLO":  4,
+                                                                 "ROJO":  2,
+                                                                 "GRIS":  6
+                                                             },
+                                         "grayAreas":  6,
+                                         "criticalAreas":  2,
+                                         "areasWithEvidence":  7
+                                     },
+                         "source":  {
+                                        "file":  "Informes Estudiantiles\\2026-1\\seguimiento_2026_T1.md",
+                                        "heading":  "Emanuel Cardona Calderon"
+                                    }
+                     },
+                     {
+                         "id":  "jarol-esteban-alvares",
+                         "name":  "Jarol Esteban Alvares",
+                         "grade":  "10E",
+                         "period":  "2026-T1",
+                         "globalSignal":  {
+                                              "label":  "ROJO",
+                                              "summary":  "**🔴 ROJO** — El período muestra bajo compromiso, somnolencia y distracción reiterada, con focos críticos en Cátedra, Matemáticas y Química."
+                                          },
+                         "areaSignals":  [
+                                             {
+                                                 "area":  "Catedra y emprendimiento",
+                                                 "teacher":  "Maria edith Molina",
+                                                 "signal":  "ROJO",
+                                                 "signalText":  "ðŸ”´ ROJO",
+                                                 "status":  "Falta compromiso y disciplina; se duerme en clase."
+                                             },
+                                             {
+                                                 "area":  "Matematicas",
+                                                 "teacher":  "Ricardo Galvis",
+                                                 "signal":  "ROJO",
+                                                 "signalText":  "🔴 ROJO",
+                                                 "status":  "Quiz diagnóstico en 1 y habla mucho durante la clase."
+                                             },
+                                             {
+                                                 "area":  "Politicas/Economia",
+                                                 "teacher":  "Andres Mauricio Castro",
+                                                 "signal":  "AMARILLO",
+                                                 "signalText":  "ðŸŸ¡ AMARILLO",
+                                                 "status":  "Asiste, pero mantiene actitudes relajadas y no hay notas."
+                                             },
+                                             {
+                                                 "area":  "Quimica",
+                                                 "teacher":  "Aris Andrade",
+                                                 "signal":  "ROJO",
+                                                 "signalText":  "ðŸ”´ ROJO",
+                                                 "status":  "Llamados diarios por celular y somnolencia en clase."
+                                             },
+                                             {
+                                                 "area":  "Religion/Filosofia",
+                                                 "teacher":  "Juan Pablo Agudelo",
+                                                 "signal":  "VERDE",
+                                                 "signalText":  "ðŸŸ¢ VERDE",
+                                                 "status":  "Lleva las notas adecuadamente y muestra mejoramiento."
+                                             },
+                                             {
+                                                 "area":  "Etica",
+                                                 "teacher":  "Cristian Garcia",
+                                                 "signal":  "AMARILLO",
+                                                 "signalText":  "ðŸŸ¡ AMARILLO",
+                                                 "status":  "Habla constantemente, aunque cumple con sus deberes."
+                                             },
+                                             {
+                                                 "area":  "Ingles",
+                                                 "teacher":  "Gustavo Rojas",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Sociales",
+                                                 "teacher":  "Luis Cañaveral",
+                                                 "signal":  "ROJO",
+                                                 "signalText":  "🔴 ROJO",
+                                                 "status":  "Busca compañeros que afectan la convivencia y su escucha es irregular."
+                                             },
+                                             {
+                                                 "area":  "Tecnologia",
+                                                 "teacher":  "Marlon Solano",
+                                                 "signal":  "VERDE",
+                                                 "signalText":  "ðŸŸ¢ VERDE",
+                                                 "status":  "Sin novedad relevante en comportamiento."
+                                             },
+                                             {
+                                                 "area":  "Biologia",
+                                                 "teacher":  "Patricia Chanci",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Edu. Fisica",
+                                                 "teacher":  "Patricia Chancin",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Artistica",
+                                                 "teacher":  "Julian Ramirez",
+                                                 "signal":  "AMARILLO",
+                                                 "signalText":  "🟡 AMARILLO",
+                                                 "status":  "Es responsable, pero el grupo de compañeros lo distrae."
+                                             },
+                                             {
+                                                 "area":  "Fisica",
+                                                 "teacher":  "Cristian Monsalve",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Diagnóstico en curso; sin evidencia suficiente."
+                                             }
+                                         ],
+                         "feedbackParagraphs":  [
+                                                    "Jarol presenta un patrón transversal de bajo foco y autorregulación: varios docentes reportan somnolencia, distracción, uso de celular y conversación excesiva. Esa reiteración vuelve el caso prioritario, especialmente porque convive con un resultado crítico en Matemáticas y con afectación del clima de aula en Sociales.",
+                                                    "También existen áreas donde logra sostener mejor desempeño, como Religión/Filosofía, Tecnología y parcialmente Artística. El corte deja 4 áreas en `⚪ GRIS`, de modo que el trabajo principal no es completar vacíos, sino intervenir hábitos y conducta para que el avance favorable pueda extenderse a otras materias."
+                                                ],
+                         "dimensions":  [
+                                            {
+                                                "name":  "Compromiso Académico",
+                                                "level":  "BAJO",
+                                                "summary":  "Predominan señales de bajo compromiso, somnolencia y resultados deficientes. Las fortalezas puntuales no alcanzan a compensar el patrón general del período."
+                                            },
+                                            {
+                                                "name":  "Madurez Emocional",
+                                                "level":  "BAJA",
+                                                "summary":  "La evidencia escolar muestra dificultades de autorregulación, control de impulsos y persistencia frente a las tareas. No se infiere una condición clínica, solo una necesidad formativa clara."
+                                            },
+                                            {
+                                                "name":  "Riesgo de Deserción",
+                                                "level":  "ALTO",
+                                                "summary":  "Aunque no se reporta inasistencia alta, la desconexión académica y conductual es transversal. La repitencia y el bajo rendimiento en áreas clave elevan el riesgo si no hay intervención sostenida."
+                                            },
+                                            {
+                                                "name":  "Dinámica Social/Grupal",
+                                                "level":  "DEFICIENTE",
+                                                "summary":  "Su interacción con pares aparece como distractor y en Sociales ya afecta convivencia. Necesita límites claros y reencuadre de su lugar en el grupo."
+                                            }
+                                        ],
+                         "earlyRiskSignals":  [
+                                                  "⚠️ Se duerme en clase en más de un área.",
+                                                  "⚠️ Uso reiterado del celular y conversación constante.",
+                                                  "⚠️ Resultado diagnóstico crítico en Matemáticas."
+                                              ],
+                         "behaviorPatterns":  [
+                                                  "Responde mejor en áreas con acompañamiento más directo.",
+                                                  "Se deja influir con facilidad por distractores del grupo.",
+                                                  "Tiene momentos de cumplimiento, pero no los sostiene con regularidad."
+                                              ],
+                         "recommendations":  [
+                                                 "Establecer control explícito del celular y de los permisos de salida.",
+                                                 "Diseñar una rutina corta de recuperación en Matemáticas y Química.",
+                                                 "Definir un acuerdo conductual de aula con seguimiento semanal.",
+                                                 "Separarlo de focos de distracción cuando la clase lo requiera.",
+                                                 "Reforzar con retroalimentación concreta las áreas donde sí muestra mejora."
+                                             ],
+                         "derived":  {
+                                         "areaColorCounts":  {
+                                                                 "VERDE":  2,
+                                                                 "AMARILLO":  3,
+                                                                 "ROJO":  4,
+                                                                 "GRIS":  4
+                                                             },
+                                         "grayAreas":  4,
+                                         "criticalAreas":  4,
+                                         "areasWithEvidence":  9
+                                     },
+                         "source":  {
+                                        "file":  "Informes Estudiantiles\\2026-1\\seguimiento_2026_T1.md",
+                                        "heading":  "Jarol Esteban Alvares"
+                                    }
+                     },
+                     {
+                         "id":  "jhony-alejandro-gomez",
+                         "name":  "Jhony Alejandro Gomez",
+                         "grade":  "10E",
+                         "period":  "2026-T1",
+                         "globalSignal":  {
+                                              "label":  "ROJO",
+                                              "summary":  "**🔴 ROJO** — La combinación de inasistencia, pendientes y baja presencia efectiva en clase ubica el caso en alerta alta."
+                                          },
+                         "areaSignals":  [
+                                             {
+                                                 "area":  "Catedra y emprendimiento",
+                                                 "teacher":  "Maria edith Molina",
+                                                 "signal":  "ROJO",
+                                                 "signalText":  "ðŸ”´ ROJO",
+                                                 "status":  "Actividades pendientes e inasistencia alta."
+                                             },
+                                             {
+                                                 "area":  "Matematicas",
+                                                 "teacher":  "Ricardo Galvis",
+                                                 "signal":  "ROJO",
+                                                 "signalText":  "🔴 ROJO",
+                                                 "status":  "Quiz pendiente, faltó varios días y se reportan inasistencias constantes."
+                                             },
+                                             {
+                                                 "area":  "Politicas/Economia",
+                                                 "teacher":  "Andres Mauricio Castro",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Quimica",
+                                                 "teacher":  "Aris Andrade",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Religion/Filosofia",
+                                                 "teacher":  "Juan Pablo Agudelo",
+                                                 "signal":  "AMARILLO",
+                                                 "signalText":  "🟡 AMARILLO",
+                                                 "status":  "Tiene las notas al día, pero debe esforzarse más académicamente."
+                                             },
+                                             {
+                                                 "area":  "Etica",
+                                                 "teacher":  "Cristian Garcia",
+                                                 "signal":  "AMARILLO",
+                                                 "signalText":  "ðŸŸ¡ AMARILLO",
+                                                 "status":  "Llega tarde al aula."
+                                             },
+                                             {
+                                                 "area":  "Ingles",
+                                                 "teacher":  "Gustavo Rojas",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Sociales",
+                                                 "teacher":  "Luis Cañaveral",
+                                                 "signal":  "ROJO",
+                                                 "signalText":  "🔴 ROJO",
+                                                 "status":  "Ausente en clase y con baja participación observable."
+                                             },
+                                             {
+                                                 "area":  "Tecnologia",
+                                                 "teacher":  "Marlon Solano",
+                                                 "signal":  "AMARILLO",
+                                                 "signalText":  "🟡 AMARILLO",
+                                                 "status":  "Sigue muy distraído durante las explicaciones."
+                                             },
+                                             {
+                                                 "area":  "Biologia",
+                                                 "teacher":  "Patricia Chanci",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Edu. Fisica",
+                                                 "teacher":  "Patricia Chancin",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Artistica",
+                                                 "teacher":  "Julian Ramirez",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Fisica",
+                                                 "teacher":  "Cristian Monsalve",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Diagnóstico en curso; sin evidencia suficiente."
+                                             }
+                                         ],
+                         "feedbackParagraphs":  [
+                                                    "Jhony reúne varias señales de alerta temprana en el mismo corte: inasistencia alta, actividades pendientes, tardanzas y ausencia en clase en al menos tres áreas. La mención de problemáticas familiares no autoriza conclusiones adicionales, pero sí obliga a un seguimiento más cuidadoso y coordinado.",
+                                                    "La nota positiva es que en Religión/Filosofía aparece un espacio donde logra sostener orden de notas. Aun así, el registro deja 7 áreas en `⚪ GRIS` y los indicadores críticos disponibles son suficientemente fuertes para priorizar asistencia, puntualidad y recuperación de pendientes."
+                                                ],
+                         "dimensions":  [
+                                            {
+                                                "name":  "Compromiso Académico",
+                                                "level":  "BAJO",
+                                                "summary":  "El patrón dominante es de pendientes, ausencias y baja continuidad. La existencia de un área al día no alcanza para cambiar la lectura general del período."
+                                            },
+                                            {
+                                                "name":  "Madurez Emocional",
+                                                "level":  "BAJA",
+                                                "summary":  "La evidencia escolar sugiere baja autorregulación en puntualidad, atención y persistencia. No hay base para diagnosticar, pero sí para acompañar formativamente estos hábitos."
+                                            },
+                                            {
+                                                "name":  "Riesgo de Deserción",
+                                                "level":  "ALTO",
+                                                "summary":  "La combinación de repitencia, inasistencia alta y baja presencia efectiva en clase configura una alerta fuerte de desconexión escolar. Requiere intervención inmediata y trazable."
+                                            },
+                                            {
+                                                "name":  "Dinámica Social/Grupal",
+                                                "level":  "REGULAR",
+                                                "summary":  "La información es limitada, pero las ausencias y la distracción reducen su integración real al trabajo de aula. El foco principal no es el conflicto con pares, sino la baja permanencia activa."
+                                            }
+                                        ],
+                         "earlyRiskSignals":  [
+                                                  "⚠️ Inasistencia reiterada y faltas en varias áreas.",
+                                                  "⚠️ Quiz y actividades pendientes.",
+                                                  "⚠️ Tardanzas y baja participación observable en clase."
+                                              ],
+                         "behaviorPatterns":  [
+                                                  "Requiere control cercano de fechas y pendientes.",
+                                                  "Presenta mejor respuesta cuando logra sostener asistencia.",
+                                                  "La distracción y la discontinuidad afectan la observación docente."
+                                              ],
+                         "recommendations":  [
+                                                 "Activar un plan inmediato de recuperación de pendientes con fechas concretas.",
+                                                 "Hacer seguimiento diario a asistencia y puntualidad con apoyo familiar.",
+                                                 "Verificar en tutoría qué apoyos necesita para sostener continuidad escolar.",
+                                                 "Convertir Religión/Filosofía en área de referencia para replicar hábitos de orden.",
+                                                 "Solicitar nuevos reportes docentes en las áreas aún sin evidencia."
+                                             ],
+                         "derived":  {
+                                         "areaColorCounts":  {
+                                                                 "VERDE":  0,
+                                                                 "AMARILLO":  3,
+                                                                 "ROJO":  3,
+                                                                 "GRIS":  7
+                                                             },
+                                         "grayAreas":  7,
+                                         "criticalAreas":  3,
+                                         "areasWithEvidence":  6
+                                     },
+                         "source":  {
+                                        "file":  "Informes Estudiantiles\\2026-1\\seguimiento_2026_T1.md",
+                                        "heading":  "Jhony Alejandro Gomez"
+                                    }
+                     },
+                     {
+                         "id":  "jhojan-estiben-zapata",
+                         "name":  "Jhojan Estiben Zapata",
+                         "grade":  "10E",
+                         "period":  "2026-T1",
+                         "globalSignal":  {
+                                              "label":  "ROJO",
+                                              "summary":  "**🔴 ROJO** — Matemáticas concentra la alerta principal, con rezagos adicionales en otras áreas que todavía requieren orden y seguimiento."
+                                          },
+                         "areaSignals":  [
+                                             {
+                                                 "area":  "Catedra y emprendimiento",
+                                                 "teacher":  "Maria edith Molina",
+                                                 "signal":  "AMARILLO",
+                                                 "signalText":  "🟡 AMARILLO",
+                                                 "status":  "Debe ponerse al día, aunque mantiene buena actitud y ayuda."
+                                             },
+                                             {
+                                                 "area":  "Matematicas",
+                                                 "teacher":  "Ricardo Galvis",
+                                                 "signal":  "ROJO",
+                                                 "signalText":  "🔴 ROJO",
+                                                 "status":  "Quiz diagnóstico en 1 y bajo compromiso, con distracciones en clase."
+                                             },
+                                             {
+                                                 "area":  "Politicas/Economia",
+                                                 "teacher":  "Andres Mauricio Castro",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Quimica",
+                                                 "teacher":  "Aris Andrade",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Religion/Filosofia",
+                                                 "teacher":  "Juan Pablo Agudelo",
+                                                 "signal":  "VERDE",
+                                                 "signalText":  "🟢 VERDE",
+                                                 "status":  "Notas al día y mejoría en sus actividades."
+                                             },
+                                             {
+                                                 "area":  "Etica",
+                                                 "teacher":  "Cristian Garcia",
+                                                 "signal":  "AMARILLO",
+                                                 "signalText":  "🟡 AMARILLO",
+                                                 "status":  "No presentó el primer taller, aunque se muestra comprometido."
+                                             },
+                                             {
+                                                 "area":  "Ingles",
+                                                 "teacher":  "Gustavo Rojas",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Sociales",
+                                                 "teacher":  "Luis Cañaveral",
+                                                 "signal":  "AMARILLO",
+                                                 "signalText":  "🟡 AMARILLO",
+                                                 "status":  "Actitud de cambio y deseo de superación, pero participación aún irregular."
+                                             },
+                                             {
+                                                 "area":  "Tecnologia",
+                                                 "teacher":  "Marlon Solano",
+                                                 "signal":  "VERDE",
+                                                 "signalText":  "🟢 VERDE",
+                                                 "status":  "Muy buena actitud y disposición para el año."
+                                             },
+                                             {
+                                                 "area":  "Biologia",
+                                                 "teacher":  "Patricia Chanci",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Edu. Fisica",
+                                                 "teacher":  "Patricia Chancin",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Artistica",
+                                                 "teacher":  "Julian Ramirez",
+                                                 "signal":  "AMARILLO",
+                                                 "signalText":  "🟡 AMARILLO",
+                                                 "status":  "Valoración en 3.0 con actividades incompletas."
+                                             },
+                                             {
+                                                 "area":  "Fisica",
+                                                 "teacher":  "Cristian Monsalve",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Diagnóstico en curso; sin evidencia suficiente."
+                                             }
+                                         ],
+                         "feedbackParagraphs":  [
+                                                    "Jhojan Estiben muestra señales valiosas de disposición en Tecnología, Religión/Filosofía y parcialmente en Cátedra y emprendimiento. Esa base es importante porque indica que sí puede responder al acompañamiento y sostener mejores hábitos cuando la tarea está delimitada.",
+                                                    "La principal dificultad continúa en Matemáticas y se complementa con rezagos puntuales en Ética, Cátedra y Artística. El registro deja 6 áreas en `⚪ GRIS`; por eso el trabajo docente debe concentrarse en ordenar pendientes y disminuir distracciones antes de ampliar nuevas exigencias."
+                                                ],
+                         "dimensions":  [
+                                            {
+                                                "name":  "Compromiso Académico",
+                                                "level":  "MEDIO",
+                                                "summary":  "Tiene disposición favorable en varias asignaturas, pero el rendimiento y el cumplimiento siguen siendo irregulares en áreas críticas. Necesita pasar de la intención de mejora a una constancia verificable."
+                                            },
+                                            {
+                                                "name":  "Madurez Emocional",
+                                                "level":  "MEDIA",
+                                                "summary":  "Se observan señales de cambio y deseo de superación. A la vez, persisten conductas que muestran dificultad para sostener autocontrol y atención durante toda la jornada."
+                                            },
+                                            {
+                                                "name":  "Riesgo de Deserción",
+                                                "level":  "MODERADO",
+                                                "summary":  "No hay reporte de inasistencia severa, pero la repitencia y el bajo desempeño en Matemáticas justifican acompañamiento preventivo. El riesgo aumenta si los pendientes se acumulan."
+                                            },
+                                            {
+                                                "name":  "Dinámica Social/Grupal",
+                                                "level":  "REGULAR",
+                                                "summary":  "Tiende a hablar mucho y a distraerse con el grupo, aunque también se le reconoce disposición positiva. Requiere límites claros y seguimiento sin estigmatización."
+                                            }
+                                        ],
+                         "earlyRiskSignals":  [
+                                                  "⚠️ Nota diagnóstica de 1 en Matemáticas.",
+                                                  "⚠️ Interrupciones frecuentes y distractores durante la clase.",
+                                                  "⚠️ Actividades incompletas en varias áreas."
+                                              ],
+                         "behaviorPatterns":  [
+                                                  "Ayuda en actividades escolares y mantiene buena actitud en algunos espacios.",
+                                                  "Responde mejor cuando hay acompañamiento visible.",
+                                                  "Necesita ordenar entregas y reducir conductas que interrumpen la clase."
+                                              ],
+                         "recommendations":  [
+                                                 "Establecer una rutina semanal de refuerzo en Matemáticas.",
+                                                 "Revisar pendientes de Cátedra, Ética y Artística con fechas claras.",
+                                                 "Definir acuerdos de aula para hablar menos y evitar comer en clase.",
+                                                 "Aprovechar Tecnología y Religión/Filosofía como áreas de anclaje positivo.",
+                                                 "Verificar cada dos semanas si la actitud de cambio se traduce en resultados."
+                                             ],
+                         "derived":  {
+                                         "areaColorCounts":  {
+                                                                 "VERDE":  2,
+                                                                 "AMARILLO":  4,
+                                                                 "ROJO":  1,
+                                                                 "GRIS":  6
+                                                             },
+                                         "grayAreas":  6,
+                                         "criticalAreas":  1,
+                                         "areasWithEvidence":  7
+                                     },
+                         "source":  {
+                                        "file":  "Informes Estudiantiles\\2026-1\\seguimiento_2026_T1.md",
+                                        "heading":  "Jhojan Estiben Zapata"
+                                    }
+                     },
+                     {
+                         "id":  "jhojan-stiven-londono",
+                         "name":  "Jhojan Stiven Londoño",
+                         "grade":  "10E",
+                         "period":  "2026-T1",
+                         "globalSignal":  {
+                                              "label":  "ROJO",
+                                              "summary":  "**🔴 ROJO** — El período combina un resultado crítico en Matemáticas con incumplimiento severo en Artística."
+                                          },
+                         "areaSignals":  [
+                                             {
+                                                 "area":  "Catedra y emprendimiento",
+                                                 "teacher":  "Maria edith Molina",
+                                                 "signal":  "VERDE",
+                                                 "signalText":  "🟢 VERDE",
+                                                 "status":  "Está al día con las actividades y presenta buen comportamiento."
+                                             },
+                                             {
+                                                 "area":  "Matematicas",
+                                                 "teacher":  "Ricardo Galvis",
+                                                 "signal":  "ROJO",
+                                                 "signalText":  "🔴 ROJO",
+                                                 "status":  "Quiz diagnóstico en 1, aunque se reportan buena asistencia y actitud."
+                                             },
+                                             {
+                                                 "area":  "Politicas/Economia",
+                                                 "teacher":  "Andres Mauricio Castro",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Quimica",
+                                                 "teacher":  "Aris Andrade",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Religion/Filosofia",
+                                                 "teacher":  "Juan Pablo Agudelo",
+                                                 "signal":  "AMARILLO",
+                                                 "signalText":  "🟡 AMARILLO",
+                                                 "status":  "Lleva las notas al día, pero debe esforzarse más académicamente."
+                                             },
+                                             {
+                                                 "area":  "Etica",
+                                                 "teacher":  "Cristian Garcia",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Ingles",
+                                                 "teacher":  "Gustavo Rojas",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Sociales",
+                                                 "teacher":  "Luis Cañaveral",
+                                                 "signal":  "AMARILLO",
+                                                 "signalText":  "🟡 AMARILLO",
+                                                 "status":  "Se observa actitud de cambio y deseo de superación, con participación aún parcial."
+                                             },
+                                             {
+                                                 "area":  "Tecnologia",
+                                                 "teacher":  "Marlon Solano",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Biologia",
+                                                 "teacher":  "Patricia Chanci",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Edu. Fisica",
+                                                 "teacher":  "Patricia Chancin",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Artistica",
+                                                 "teacher":  "Julian Ramirez",
+                                                 "signal":  "ROJO",
+                                                 "signalText":  "🔴 ROJO",
+                                                 "status":  "No presenta actividades, acumula notas en 1.0 y no trabaja en clase."
+                                             },
+                                             {
+                                                 "area":  "Fisica",
+                                                 "teacher":  "Cristian Monsalve",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Diagnóstico en curso; sin evidencia suficiente."
+                                             }
+                                         ],
+                         "feedbackParagraphs":  [
+                                                    "Jhojan Stiven conserva una base favorable en Cátedra y emprendimiento y también se observan señales de cambio en Sociales. Eso sugiere que puede responder mejor cuando la tarea está organizada y la expectativa es clara.",
+                                                    "Las alertas más fuertes están en Matemáticas y Artística, donde el registro ya muestra bajo resultado y ausencia de trabajo sostenido. El corte deja 8 áreas en `⚪ GRIS`, de modo que la intervención debe enfocarse en recuperar lo crítico y ampliar evidencia antes de extender conclusiones."
+                                                ],
+                         "dimensions":  [
+                                            {
+                                                "name":  "Compromiso Académico",
+                                                "level":  "BAJO",
+                                                "summary":  "Aunque hay disposición en algunos espacios, el incumplimiento en Artística y el resultado crítico en Matemáticas pesan de manera importante. Se requiere seguimiento cercano de tareas y evidencias."
+                                            },
+                                            {
+                                                "name":  "Madurez Emocional",
+                                                "level":  "MEDIA",
+                                                "summary":  "No hay reportes de conflicto fuerte con docentes o pares. Sí aparece necesidad de sostener esfuerzo y pasar de la intención de mejora a una constancia más estable."
+                                            },
+                                            {
+                                                "name":  "Riesgo de Deserción",
+                                                "level":  "ALTO",
+                                                "summary":  "La repitencia, junto con dos áreas en rojo y muchos vacíos de información, justifica una alerta alta de seguimiento. No implica abandono inminente, pero sí necesidad de intervención pronta."
+                                            },
+                                            {
+                                                "name":  "Dinámica Social/Grupal",
+                                                "level":  "REGULAR",
+                                                "summary":  "La evidencia social es limitada, aunque en Artística se menciona conversación excesiva. Conviene acompañar participación y foco sin exponerlo públicamente."
+                                            }
+                                        ],
+                         "earlyRiskSignals":  [
+                                                  "⚠️ Nota diagnóstica de 1 en Matemáticas.",
+                                                  "⚠️ No presenta actividades y acumula notas bajas en Artística.",
+                                                  "⚠️ Ocho áreas aún no cuentan con evidencia suficiente."
+                                              ],
+                         "behaviorPatterns":  [
+                                                  "Mantiene buen comportamiento en Cátedra y emprendimiento.",
+                                                  "Puede mostrar actitud de cambio cuando recibe acompañamiento.",
+                                                  "Necesita sostener entrega de trabajos y presencia activa en clase."
+                                              ],
+                         "recommendations":  [
+                                                 "Activar recuperación prioritaria en Artística con productos cortos y fechas fijas.",
+                                                 "Implementar refuerzo semanal en Matemáticas con seguimiento de avances.",
+                                                 "Sostener el buen comportamiento observado en Cátedra como base de mejora.",
+                                                 "Solicitar reporte docente complementario en las áreas que siguen en `⚪ GRIS`.",
+                                                 "Revisar cada quince días cumplimiento, participación y nuevas evidencias."
+                                             ],
+                         "derived":  {
+                                         "areaColorCounts":  {
+                                                                 "VERDE":  1,
+                                                                 "AMARILLO":  2,
+                                                                 "ROJO":  2,
+                                                                 "GRIS":  8
+                                                             },
+                                         "grayAreas":  8,
+                                         "criticalAreas":  2,
+                                         "areasWithEvidence":  5
+                                     },
+                         "source":  {
+                                        "file":  "Informes Estudiantiles\\2026-1\\seguimiento_2026_T1.md",
+                                        "heading":  "Jhojan Stiven Londoño"
+                                    }
+                     },
+                     {
+                         "id":  "juan-sebastian-gonzalez",
+                         "name":  "Juan Sebastian Gonzalez",
+                         "grade":  "10E",
+                         "period":  "2026-T1",
+                         "globalSignal":  {
+                                              "label":  "ROJO",
+                                              "summary":  "**🔴 ROJO** — Matemáticas marca el punto crítico del período, aunque hay fortalezas parciales en varias áreas."
+                                          },
+                         "areaSignals":  [
+                                             {
+                                                 "area":  "Catedra y emprendimiento",
+                                                 "teacher":  "Maria edith Molina",
+                                                 "signal":  "AMARILLO",
+                                                 "signalText":  "🟡 AMARILLO",
+                                                 "status":  "Está al día, pero aún puede mejorar su proceso académico."
+                                             },
+                                             {
+                                                 "area":  "Matematicas",
+                                                 "teacher":  "Ricardo Galvis",
+                                                 "signal":  "ROJO",
+                                                 "signalText":  "🔴 ROJO",
+                                                 "status":  "Quiz diagnóstico en 1 y falta de compromiso académico."
+                                             },
+                                             {
+                                                 "area":  "Politicas/Economia",
+                                                 "teacher":  "Andres Mauricio Castro",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Quimica",
+                                                 "teacher":  "Aris Andrade",
+                                                 "signal":  "AMARILLO",
+                                                 "signalText":  "ðŸŸ¡ AMARILLO",
+                                                 "status":  "Se dispersa en ocasiones."
+                                             },
+                                             {
+                                                 "area":  "Religion/Filosofia",
+                                                 "teacher":  "Juan Pablo Agudelo",
+                                                 "signal":  "VERDE",
+                                                 "signalText":  "🟢 VERDE",
+                                                 "status":  "Notas al día y cambio positivo en comportamiento."
+                                             },
+                                             {
+                                                 "area":  "Etica",
+                                                 "teacher":  "Cristian Garcia",
+                                                 "signal":  "AMARILLO",
+                                                 "signalText":  "ðŸŸ¡ AMARILLO",
+                                                 "status":  "No entrega a tiempo sus compromisos."
+                                             },
+                                             {
+                                                 "area":  "Ingles",
+                                                 "teacher":  "Gustavo Rojas",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Sociales",
+                                                 "teacher":  "Luis Cañaveral",
+                                                 "signal":  "AMARILLO",
+                                                 "signalText":  "🟡 AMARILLO",
+                                                 "status":  "Participa y toma notas, pero debe manejar distractores."
+                                             },
+                                             {
+                                                 "area":  "Tecnologia",
+                                                 "teacher":  "Marlon Solano",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Registro muy inicial; evidencia insuficiente."
+                                             },
+                                             {
+                                                 "area":  "Biologia",
+                                                 "teacher":  "Patricia Chanci",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Edu. Fisica",
+                                                 "teacher":  "Patricia Chancin",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Artistica",
+                                                 "teacher":  "Julian Ramirez",
+                                                 "signal":  "VERDE",
+                                                 "signalText":  "ðŸŸ¢ VERDE",
+                                                 "status":  "Cumple actividades y es participativo y colaborativo."
+                                             },
+                                             {
+                                                 "area":  "Fisica",
+                                                 "teacher":  "Cristian Monsalve",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Diagnóstico en curso; sin evidencia suficiente."
+                                             }
+                                         ],
+                         "feedbackParagraphs":  [
+                                                    "Juan Sebastián tiene un perfil mixto: en Religión/Filosofía y Artística aparecen señales claras de cumplimiento, y en Sociales también se observan participación y toma de notas. Esto indica que no está desconectado del proceso, pero todavía no logra sostener el mismo nivel de respuesta en todas las áreas.",
+                                                    "La dificultad principal sigue en Matemáticas y se complementa con entregas tardías o distractores en Ética, Química y Sociales. El corte deja 5 áreas en `⚪ GRIS`, por lo que la prioridad es estabilizar hábitos de estudio y atención sin perder las fortalezas ya visibles."
+                                                ],
+                         "dimensions":  [
+                                            {
+                                                "name":  "Compromiso Académico",
+                                                "level":  "MEDIO",
+                                                "summary":  "Hay cumplimiento en algunas áreas y buena asistencia reportada. Sin embargo, el resultado crítico en Matemáticas y los retrasos en entregas muestran que el compromiso todavía es irregular."
+                                            },
+                                            {
+                                                "name":  "Madurez Emocional",
+                                                "level":  "MEDIA",
+                                                "summary":  "Se reporta tranquilidad en clase y mejora conductual en un área. Aun así, necesita consolidar autorregulación para manejar distractores y sostener constancia."
+                                            },
+                                            {
+                                                "name":  "Riesgo de Deserción",
+                                                "level":  "MODERADO",
+                                                "summary":  "La presencia de fortalezas disminuye la alerta, pero el rezago en Matemáticas y la repitencia justifican seguimiento cercano. El riesgo es preventivo y focalizado, no generalizado."
+                                            },
+                                            {
+                                                "name":  "Dinámica Social/Grupal",
+                                                "level":  "REGULAR",
+                                                "summary":  "Participa y colabora, pero los distractores afectan su trabajo de aula. Conviene acompañar sin leer esa conducta como conflicto severo."
+                                            }
+                                        ],
+                         "earlyRiskSignals":  [
+                                                  "⚠️ Nota diagnóstica de 1 en Matemáticas.",
+                                                  "⚠️ Entregas tardías en Ética.",
+                                                  "⚠️ Distractores y dispersión en varias clases."
+                                              ],
+                         "behaviorPatterns":  [
+                                                  "Toma notas y participa cuando la clase logra engancharlo.",
+                                                  "Muestra mejor disposición en áreas con seguimiento más claro.",
+                                                  "Necesita más consistencia entre asistencia, entrega y atención."
+                                              ],
+                         "recommendations":  [
+                                                 "Fijar una rutina de estudio semanal prioritaria para Matemáticas.",
+                                                 "Verificar a tiempo compromisos de Ética y otras entregas pendientes.",
+                                                 "Reducir distractores con acuerdos de foco en clase.",
+                                                 "Tomar Artística y Religión/Filosofía como anclajes de hábito positivo.",
+                                                 "Completar evidencia en Tecnología y demás áreas todavía en `⚪ GRIS`."
+                                             ],
+                         "derived":  {
+                                         "areaColorCounts":  {
+                                                                 "VERDE":  2,
+                                                                 "AMARILLO":  4,
+                                                                 "ROJO":  1,
+                                                                 "GRIS":  6
+                                                             },
+                                         "grayAreas":  6,
+                                         "criticalAreas":  1,
+                                         "areasWithEvidence":  7
+                                     },
+                         "source":  {
+                                        "file":  "Informes Estudiantiles\\2026-1\\seguimiento_2026_T1.md",
+                                        "heading":  "Juan Sebastian Gonzalez"
+                                    }
+                     },
+                     {
+                         "id":  "keidy-julieth-benitez",
+                         "name":  "Keidy Julieth Benitez",
+                         "grade":  "10E",
+                         "period":  "2026-T1",
+                         "globalSignal":  {
+                                              "label":  "ROJO",
+                                              "summary":  "**🔴 ROJO** — Matemáticas es el foco crítico del corte; el resto del perfil combina fortalezas claras con participación todavía reservada."
+                                          },
+                         "areaSignals":  [
+                                             {
+                                                 "area":  "Catedra y emprendimiento",
+                                                 "teacher":  "Maria edith Molina",
+                                                 "signal":  "VERDE",
+                                                 "signalText":  "🟢 VERDE",
+                                                 "status":  "Está al día, con buena actitud y disposición."
+                                             },
+                                             {
+                                                 "area":  "Matematicas",
+                                                 "teacher":  "Ricardo Galvis",
+                                                 "signal":  "ROJO",
+                                                 "signalText":  "🔴 ROJO",
+                                                 "status":  "Quiz diagnóstico en 1 y poco compromiso académico."
+                                             },
+                                             {
+                                                 "area":  "Politicas/Economia",
+                                                 "teacher":  "Andres Mauricio Castro",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Quimica",
+                                                 "teacher":  "Aris Andrade",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Religion/Filosofia",
+                                                 "teacher":  "Juan Pablo Agudelo",
+                                                 "signal":  "VERDE",
+                                                 "signalText":  "🟢 VERDE",
+                                                 "status":  "Notas al día y rendimiento destacado."
+                                             },
+                                             {
+                                                 "area":  "Etica",
+                                                 "teacher":  "Cristian Garcia",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Ingles",
+                                                 "teacher":  "Gustavo Rojas",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Sociales",
+                                                 "teacher":  "Luis Cañaveral",
+                                                 "signal":  "VERDE",
+                                                 "signalText":  "🟢 VERDE",
+                                                 "status":  "Participa y muestra actitud de cambio."
+                                             },
+                                             {
+                                                 "area":  "Tecnologia",
+                                                 "teacher":  "Marlon Solano",
+                                                 "signal":  "AMARILLO",
+                                                 "signalText":  "ðŸŸ¡ AMARILLO",
+                                                 "status":  "Sigue muy callada y participa poco."
+                                             },
+                                             {
+                                                 "area":  "Biologia",
+                                                 "teacher":  "Patricia Chanci",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Edu. Fisica",
+                                                 "teacher":  "Patricia Chancin",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Artistica",
+                                                 "teacher":  "Julian Ramirez",
+                                                 "signal":  "AMARILLO",
+                                                 "signalText":  "🟡 AMARILLO",
+                                                 "status":  "Faltó a una clase y debe presentar excusa."
+                                             },
+                                             {
+                                                 "area":  "Fisica",
+                                                 "teacher":  "Cristian Monsalve",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Diagnóstico en curso; sin evidencia suficiente."
+                                             }
+                                         ],
+                         "feedbackParagraphs":  [
+                                                    "Keidy tiene fortalezas visibles en Cátedra y emprendimiento, Religión/Filosofía y Sociales, donde la evidencia habla de disposición, orden y participación. Estas señales son valiosas porque muestran recursos de base para sostener un proceso más estable.",
+                                                    "La principal alerta está en Matemáticas y se suma a una participación todavía muy baja en Tecnología. El corte deja 7 áreas en `⚪ GRIS`, de modo que conviene intervenir el rezago crítico y, al mismo tiempo, ampliar evidencia docente en las asignaturas sin reporte."
+                                                ],
+                         "dimensions":  [
+                                            {
+                                                "name":  "Compromiso Académico",
+                                                "level":  "MEDIO",
+                                                "summary":  "Presenta cumplimiento sólido en varias áreas, pero Matemáticas introduce una alerta fuerte que no puede relativizarse. El compromiso es desigual según la asignatura y el nivel de participación requerido."
+                                            },
+                                            {
+                                                "name":  "Madurez Emocional",
+                                                "level":  "MEDIA",
+                                                "summary":  "No hay reportes de conflicto ni bloqueo abierto. Sí aparece una estudiante reservada, con baja exposición en algunas clases y necesidad de acompañamiento cercano para ganar seguridad."
+                                            },
+                                            {
+                                                "name":  "Riesgo de Deserción",
+                                                "level":  "MODERADO",
+                                                "summary":  "No hay señales directas de ausentismo sostenido. La alerta se sostiene por la repitencia, el bajo compromiso en Matemáticas y la tendencia al retraimiento participativo."
+                                            },
+                                            {
+                                                "name":  "Dinámica Social/Grupal",
+                                                "level":  "REGULAR",
+                                                "summary":  "En Sociales participa y muestra cambio de actitud, pero en otras áreas se le describe muy callada. Necesita más presencia activa, no necesariamente más sociabilidad forzada."
+                                            }
+                                        ],
+                         "earlyRiskSignals":  [
+                                                  "⚠️ Resultado crítico en el diagnóstico de Matemáticas.",
+                                                  "⚠️ Participación muy baja en Tecnología.",
+                                                  "⚠️ Siete áreas siguen sin evidencia suficiente."
+                                              ],
+                         "behaviorPatterns":  [
+                                                  "Responde bien cuando las actividades están organizadas y el seguimiento es cercano.",
+                                                  "Mantiene actitud positiva en áreas donde se siente más segura.",
+                                                  "Tiende a retraerse en clases donde necesita exponerse más."
+                                              ],
+                         "recommendations":  [
+                                                 "Priorizar refuerzo puntual en Matemáticas con metas pequeñas y frecuentes.",
+                                                 "Propiciar participación guiada en Tecnología sin sobreexposición.",
+                                                 "Verificar recuperación oportuna de la ausencia en Artística.",
+                                                 "Mantener reconocimiento explícito de sus fortalezas en Sociales y Religión.",
+                                                 "Completar reportes en las áreas que continúan en `⚪ GRIS`."
+                                             ],
+                         "derived":  {
+                                         "areaColorCounts":  {
+                                                                 "VERDE":  3,
+                                                                 "AMARILLO":  2,
+                                                                 "ROJO":  1,
+                                                                 "GRIS":  7
+                                                             },
+                                         "grayAreas":  7,
+                                         "criticalAreas":  1,
+                                         "areasWithEvidence":  6
+                                     },
+                         "source":  {
+                                        "file":  "Informes Estudiantiles\\2026-1\\seguimiento_2026_T1.md",
+                                        "heading":  "Keidy Julieth Benitez"
+                                    }
+                     },
+                     {
+                         "id":  "maria-isabel-goez",
+                         "name":  "Maria Isabel Goez",
+                         "grade":  "10E",
+                         "period":  "2026-T1",
+                         "globalSignal":  {
+                                              "label":  "ROJO",
+                                              "summary":  "**🔴 ROJO** — Matemáticas y Artística concentran las principales alertas, pese a que en otras áreas ya aparecen señales de interés y mejora."
+                                          },
+                         "areaSignals":  [
+                                             {
+                                                 "area":  "Catedra y emprendimiento",
+                                                 "teacher":  "Maria edith Molina",
+                                                 "signal":  "AMARILLO",
+                                                 "signalText":  "🟡 AMARILLO",
+                                                 "status":  "Está al día, pero se distrae y pierde de vista su objetivo."
+                                             },
+                                             {
+                                                 "area":  "Matematicas",
+                                                 "teacher":  "Ricardo Galvis",
+                                                 "signal":  "ROJO",
+                                                 "signalText":  "🔴 ROJO",
+                                                 "status":  "Quiz diagnóstico en 1 y falta de compromiso académico."
+                                             },
+                                             {
+                                                 "area":  "Politicas/Economia",
+                                                 "teacher":  "Andres Mauricio Castro",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Quimica",
+                                                 "teacher":  "Aris Andrade",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Religion/Filosofia",
+                                                 "teacher":  "Juan Pablo Agudelo",
+                                                 "signal":  "VERDE",
+                                                 "signalText":  "🟢 VERDE",
+                                                 "status":  "Notas al día y mejoría sistemática."
+                                             },
+                                             {
+                                                 "area":  "Etica",
+                                                 "teacher":  "Cristian Garcia",
+                                                 "signal":  "VERDE",
+                                                 "signalText":  "ðŸŸ¢ VERDE",
+                                                 "status":  "Se muestra atenta y con muy buena actitud."
+                                             },
+                                             {
+                                                 "area":  "Ingles",
+                                                 "teacher":  "Gustavo Rojas",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Sociales",
+                                                 "teacher":  "Luis Cañaveral",
+                                                 "signal":  "AMARILLO",
+                                                 "signalText":  "🟡 AMARILLO",
+                                                 "status":  "Está atenta, pero aún participa poco."
+                                             },
+                                             {
+                                                 "area":  "Tecnologia",
+                                                 "teacher":  "Marlon Solano",
+                                                 "signal":  "VERDE",
+                                                 "signalText":  "🟢 VERDE",
+                                                 "status":  "Se le nota más interés y mejor disposición."
+                                             },
+                                             {
+                                                 "area":  "Biologia",
+                                                 "teacher":  "Patricia Chanci",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Edu. Fisica",
+                                                 "teacher":  "Patricia Chancin",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Artistica",
+                                                 "teacher":  "Julian Ramirez",
+                                                 "signal":  "ROJO",
+                                                 "signalText":  "ðŸ”´ ROJO",
+                                                 "status":  "No cumple actividades y no trabaja en clase."
+                                             },
+                                             {
+                                                 "area":  "Fisica",
+                                                 "teacher":  "Cristian Monsalve",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Diagnóstico en curso; sin evidencia suficiente."
+                                             }
+                                         ],
+                         "feedbackParagraphs":  [
+                                                    "María Isabel muestra un perfil mixto: hay avances claros en Religión/Filosofía, Ética y Tecnología, donde se reconoce orden, actitud positiva e interés. Estas fortalezas son relevantes porque muestran que el problema no es de desconexión total, sino de inconsistencia entre áreas.",
+                                                    "Las alertas se concentran en Matemáticas y Artística, y además aparecen distracción y baja participación en otras clases. El corte deja 6 áreas en `⚪ GRIS`, por lo que la prioridad es intervenir lo crítico sin perder de vista la necesidad de completar evidencia en varias asignaturas."
+                                                ],
+                         "dimensions":  [
+                                            {
+                                                "name":  "Compromiso Académico",
+                                                "level":  "MEDIO",
+                                                "summary":  "Hay áreas donde cumple y mejora, pero el bajo resultado en Matemáticas y el incumplimiento en Artística pesan de manera importante. Todavía no sostiene el mismo nivel de esfuerzo en todo el plan de estudios."
+                                            },
+                                            {
+                                                "name":  "Madurez Emocional",
+                                                "level":  "MEDIA",
+                                                "summary":  "La actitud positiva aparece en varios reportes, pero convive con distractibilidad y participación irregular. Requiere acompañamiento para transformar buena disposición en constancia académica."
+                                            },
+                                            {
+                                                "name":  "Riesgo de Deserción",
+                                                "level":  "MODERADO",
+                                                "summary":  "No hay reportes directos de ausentismo o retiro, pero la fragilidad académica en áreas clave justifica seguimiento preventivo. La repitencia aumenta la necesidad de intervención temprana."
+                                            },
+                                            {
+                                                "name":  "Dinámica Social/Grupal",
+                                                "level":  "REGULAR",
+                                                "summary":  "Escucha y se muestra atenta, aunque todavía participa poco y puede desconectarse del trabajo grupal. El foco no es convivencia crítica, sino presencia activa más sostenida."
+                                            }
+                                        ],
+                         "earlyRiskSignals":  [
+                                                  "⚠️ Quiz diagnóstico de 1 en Matemáticas.",
+                                                  "⚠️ Incumplimiento y falta de trabajo en Artística.",
+                                                  "⚠️ Distracción recurrente y baja participación en clase."
+                                              ],
+                         "behaviorPatterns":  [
+                                                  "Muestra mejor respuesta en áreas donde el seguimiento es claro.",
+                                                  "Se distrae con facilidad si pierde el propósito de la actividad.",
+                                                  "Necesita convertir interés y buena actitud en cumplimiento constante."
+                                              ],
+                         "recommendations":  [
+                                                 "Implementar refuerzo semanal en Matemáticas con seguimiento de avances.",
+                                                 "Cerrar pendientes de Artística con metas concretas y verificables.",
+                                                 "Mantener apoyo explícito en Tecnología, Ética y Religión para sostener motivación.",
+                                                 "Diseñar estrategias breves para recuperar foco y participación en clase.",
+                                                 "Solicitar evidencia complementaria en las áreas que continúan en `⚪ GRIS`."
+                                             ],
+                         "derived":  {
+                                         "areaColorCounts":  {
+                                                                 "VERDE":  3,
+                                                                 "AMARILLO":  2,
+                                                                 "ROJO":  2,
+                                                                 "GRIS":  6
+                                                             },
+                                         "grayAreas":  6,
+                                         "criticalAreas":  2,
+                                         "areasWithEvidence":  7
+                                     },
+                         "source":  {
+                                        "file":  "Informes Estudiantiles\\2026-1\\seguimiento_2026_T1.md",
+                                        "heading":  "Maria Isabel Goez"
+                                    }
+                     },
+                     {
+                         "id":  "maria-jose-del-prado",
+                         "name":  "Maria Jose Del Prado",
+                         "grade":  "10E",
+                         "period":  "2026-T1",
+                         "globalSignal":  {
+                                              "label":  "VERDE",
+                                              "summary":  "**🟢 VERDE** — Todas las áreas con evidencia suficiente muestran señales favorables y no aparecen alertas conductuales relevantes."
+                                          },
+                         "areaSignals":  [
+                                             {
+                                                 "area":  "Catedra y emprendimiento",
+                                                 "teacher":  "Maria edith Molina",
+                                                 "signal":  "VERDE",
+                                                 "signalText":  "🟢 VERDE",
+                                                 "status":  "Está al día y muestra disposición de cambio."
+                                             },
+                                             {
+                                                 "area":  "Matematicas",
+                                                 "teacher":  "Ricardo Galvis",
+                                                 "signal":  "VERDE",
+                                                 "signalText":  "🟢 VERDE",
+                                                 "status":  "Quiz diagnóstico en 5, mejor asistencia y buen inicio de período."
+                                             },
+                                             {
+                                                 "area":  "Politicas/Economia",
+                                                 "teacher":  "Andres Mauricio Castro",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Quimica",
+                                                 "teacher":  "Aris Andrade",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Religion/Filosofia",
+                                                 "teacher":  "Juan Pablo Agudelo",
+                                                 "signal":  "VERDE",
+                                                 "signalText":  "🟢 VERDE",
+                                                 "status":  "Notas al día y buena disposición en las actividades."
+                                             },
+                                             {
+                                                 "area":  "Etica",
+                                                 "teacher":  "Cristian Garcia",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Ingles",
+                                                 "teacher":  "Gustavo Rojas",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Sociales",
+                                                 "teacher":  "Luis Cañaveral",
+                                                 "signal":  "VERDE",
+                                                 "signalText":  "🟢 VERDE",
+                                                 "status":  "Mejor estado de ánimo, escucha y atención en clase."
+                                             },
+                                             {
+                                                 "area":  "Tecnologia",
+                                                 "teacher":  "Marlon Solano",
+                                                 "signal":  "VERDE",
+                                                 "signalText":  "ðŸŸ¢ VERDE",
+                                                 "status":  "Cambio positivo y buena actitud."
+                                             },
+                                             {
+                                                 "area":  "Biologia",
+                                                 "teacher":  "Patricia Chanci",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Edu. Fisica",
+                                                 "teacher":  "Patricia Chancin",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Artistica",
+                                                 "teacher":  "Julian Ramirez",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Fisica",
+                                                 "teacher":  "Cristian Monsalve",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Diagnóstico en curso; sin evidencia suficiente."
+                                             }
+                                         ],
+                         "feedbackParagraphs":  [
+                                                    "María José presenta uno de los perfiles más estables del corte: hay mejora de asistencia, mejor estado de ánimo y cumplimiento favorable en varias áreas. La evidencia docente permite leer una estudiante que está aprovechando mejor el inicio del período y que cuenta con una base positiva para sostener su proceso.",
+                                                    "El análisis debe seguir siendo prudente porque el registro deja 8 áreas en `⚪ GRIS`, incluida Física por diagnóstico en curso. Aun así, las áreas con datos son consistentes y favorables, por lo que la tarea pedagógica principal es sostener la constancia y completar información en las asignaturas aún sin reporte."
+                                                ],
+                         "dimensions":  [
+                                            {
+                                                "name":  "Compromiso Académico",
+                                                "level":  "ALTO",
+                                                "summary":  "La evidencia disponible muestra cumplimiento, buena actitud y mejor asistencia. Todavía hacen falta registros en varias áreas, pero lo observado hasta ahora es sólido."
+                                            },
+                                            {
+                                                "name":  "Madurez Emocional",
+                                                "level":  "ALTA",
+                                                "summary":  "Se reporta mejor estado de ánimo, disposición de cambio y respuesta favorable al proceso escolar. Estas señales sugieren una mejor regulación del propio recorrido académico en este corte."
+                                            },
+                                            {
+                                                "name":  "Riesgo de Deserción",
+                                                "level":  "BAJO",
+                                                "summary":  "No aparecen señales de ausentismo, desenganche o conflicto relevante. La prioridad es sostener el avance, no contener una alerta crítica actual."
+                                            },
+                                            {
+                                                "name":  "Dinámica Social/Grupal",
+                                                "level":  "BUENA",
+                                                "summary":  "Escucha, se muestra atenta y mantiene una disposición positiva en clase. La integración grupal no aparece como un factor de riesgo en la evidencia disponible."
+                                            }
+                                        ],
+                         "earlyRiskSignals":  [
+                                                  "⚠️ Ocho áreas todavía no tienen evidencia suficiente.",
+                                                  "⚠️ Física sigue en diagnóstico y requiere cierre oportuno.",
+                                                  "⚠️ Si disminuye la constancia actual, el avance puede perderse rápidamente."
+                                              ],
+                         "behaviorPatterns":  [
+                                                  "Mantiene mejor asistencia que al inicio del proceso.",
+                                                  "Responde bien a las actividades y muestra disposición de cambio.",
+                                                  "Escucha y participa desde una actitud más estable."
+                                              ],
+                         "recommendations":  [
+                                                 "Mantener seguimiento semanal para sostener la asistencia mejorada.",
+                                                 "Cerrar oportunamente el diagnóstico de Física.",
+                                                 "Reforzar los hábitos positivos ya visibles con retroalimentación concreta.",
+                                                 "Solicitar registro en las áreas que aún continúan en `⚪ GRIS`.",
+                                                 "Revisar periódicamente estado de ánimo y constancia para prevenir retrocesos."
+                                             ],
+                         "derived":  {
+                                         "areaColorCounts":  {
+                                                                 "VERDE":  5,
+                                                                 "AMARILLO":  0,
+                                                                 "ROJO":  0,
+                                                                 "GRIS":  8
+                                                             },
+                                         "grayAreas":  8,
+                                         "criticalAreas":  0,
+                                         "areasWithEvidence":  5
+                                     },
+                         "source":  {
+                                        "file":  "Informes Estudiantiles\\2026-1\\seguimiento_2026_T1.md",
+                                        "heading":  "Maria Jose Del Prado"
+                                    }
+                     },
+                     {
+                         "id":  "santiago-rico",
+                         "name":  "Santiago Rico",
+                         "grade":  "10E",
+                         "period":  "2026-T1",
+                         "globalSignal":  {
+                                              "label":  "ROJO",
+                                              "summary":  "**🔴 ROJO** — Artística concentra la alerta crítica y Cátedra y emprendimiento muestra una señal clara de desconexión durante la clase."
+                                          },
+                         "areaSignals":  [
+                                             {
+                                                 "area":  "Catedra y emprendimiento",
+                                                 "teacher":  "Maria edith Molina",
+                                                 "signal":  "AMARILLO",
+                                                 "signalText":  "🟡 AMARILLO",
+                                                 "status":  "Se duerme en clase y necesita mejorar académicamente."
+                                             },
+                                             {
+                                                 "area":  "Matematicas",
+                                                 "teacher":  "Ricardo Galvis",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Politicas/Economia",
+                                                 "teacher":  "Andres Mauricio Castro",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Quimica",
+                                                 "teacher":  "Aris Andrade",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Religion/Filosofia",
+                                                 "teacher":  "Juan Pablo Agudelo",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Registro no interpretable; sin evidencia suficiente."
+                                             },
+                                             {
+                                                 "area":  "Etica",
+                                                 "teacher":  "Cristian Garcia",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Ingles",
+                                                 "teacher":  "Gustavo Rojas",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Sociales",
+                                                 "teacher":  "Luis Cañaveral",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Tecnologia",
+                                                 "teacher":  "Marlon Solano",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Biologia",
+                                                 "teacher":  "Patricia Chanci",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Edu. Fisica",
+                                                 "teacher":  "Patricia Chancin",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Artistica",
+                                                 "teacher":  "Julian Ramirez",
+                                                 "signal":  "ROJO",
+                                                 "signalText":  "ðŸ”´ ROJO",
+                                                 "status":  "No presenta actividades y no trabaja en clase."
+                                             },
+                                             {
+                                                 "area":  "Fisica",
+                                                 "teacher":  "Cristian Monsalve",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             }
+                                         ],
+                         "feedbackParagraphs":  [
+                                                    "Santiago cuenta con muy poca evidencia docente útil en este corte, y justamente por eso las alertas disponibles deben leerse con atención. En Cátedra y emprendimiento aparece somnolencia en clase y en Artística ya se reporta incumplimiento claro de actividades y baja implicación en el trabajo.",
+                                                    "El caso tiene 11 áreas en `⚪ GRIS`, por lo que no es posible construir una lectura amplia de su desempeño global. La prioridad inmediata es activar presencia efectiva en clase, recuperar Artística y ampliar el registro docente en el siguiente corte con hechos observables y comparables."
+                                                ],
+                         "dimensions":  [
+                                            {
+                                                "name":  "Compromiso Académico",
+                                                "level":  "BAJO",
+                                                "summary":  "La evidencia disponible muestra baja activación en clase y ausencia de trabajo en Artística. No hay suficiente información para compensar esa alerta con otras áreas."
+                                            },
+                                            {
+                                                "name":  "Madurez Emocional",
+                                                "level":  "BAJA",
+                                                "summary":  "No hay reportes de conflicto fuerte, pero sí señales de autorregulación débil en aula. La lectura se limita al ámbito escolar observable y no va más allá de eso."
+                                            },
+                                            {
+                                                "name":  "Riesgo de Deserción",
+                                                "level":  "MODERADO",
+                                                "summary":  "No se reporta inasistencia sostenida, pero sí un patrón de desenganche académico en las áreas donde hay datos. La repitencia y la escasez de evidencia obligan a seguimiento cercano."
+                                            },
+                                            {
+                                                "name":  "Dinámica Social/Grupal",
+                                                "level":  "REGULAR",
+                                                "summary":  "No aparecen conflictos con compañeros, aunque la baja participación reduce su presencia efectiva en la dinámica del grupo. Hace falta más evidencia para afirmar algo distinto."
+                                            }
+                                        ],
+                         "earlyRiskSignals":  [
+                                                  "⚠️ Se duerme en clase.",
+                                                  "⚠️ No presenta actividades en Artística.",
+                                                  "⚠️ Once áreas continúan sin información suficiente."
+                                              ],
+                         "behaviorPatterns":  [
+                                                  "Su presencia en aula requiere activación más constante.",
+                                                  "Necesita apoyo directo para sostener trabajo durante la clase.",
+                                                  "La falta de registro limita el seguimiento y debe corregirse pronto."
+                                              ],
+                         "recommendations":  [
+                                                 "Establecer acuerdos concretos para evitar somnolencia y sostener atención.",
+                                                 "Recuperar Artística con entregas breves y seguimiento semanal.",
+                                                 "Solicitar registro docente completo en el siguiente corte.",
+                                                 "Revisar con coordinación si requiere apoyos adicionales para activación en clase.",
+                                                 "Monitorear de forma quincenal cumplimiento, participación y nuevas evidencias."
+                                             ],
+                         "derived":  {
+                                         "areaColorCounts":  {
+                                                                 "VERDE":  0,
+                                                                 "AMARILLO":  1,
+                                                                 "ROJO":  1,
+                                                                 "GRIS":  11
+                                                             },
+                                         "grayAreas":  11,
+                                         "criticalAreas":  1,
+                                         "areasWithEvidence":  2
+                                     },
+                         "source":  {
+                                        "file":  "Informes Estudiantiles\\2026-1\\seguimiento_2026_T1.md",
+                                        "heading":  "Santiago Rico"
+                                    }
+                     },
+                     {
+                         "id":  "vivian-estefany-velez",
+                         "name":  "Vivian Estefany Velez",
+                         "grade":  "10E",
+                         "period":  "2026-T1",
+                         "globalSignal":  {
+                                              "label":  "ROJO",
+                                              "summary":  "**🔴 ROJO** — La alerta del período es alta por inasistencia reiterada, pendientes acumulados y baja presencia efectiva en el aula."
+                                          },
+                         "areaSignals":  [
+                                             {
+                                                 "area":  "Catedra y emprendimiento",
+                                                 "teacher":  "Maria edith Molina",
+                                                 "signal":  "ROJO",
+                                                 "signalText":  "ðŸ”´ ROJO",
+                                                 "status":  "Alta inasistencia; solo a veces presenta excusa."
+                                             },
+                                             {
+                                                 "area":  "Matematicas",
+                                                 "teacher":  "Ricardo Galvis",
+                                                 "signal":  "ROJO",
+                                                 "signalText":  "🔴 ROJO",
+                                                 "status":  "Quiz pendiente, no asistió y se reporta bajo compromiso."
+                                             },
+                                             {
+                                                 "area":  "Politicas/Economia",
+                                                 "teacher":  "Andres Mauricio Castro",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Quimica",
+                                                 "teacher":  "Aris Andrade",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Religion/Filosofia",
+                                                 "teacher":  "Juan Pablo Agudelo",
+                                                 "signal":  "VERDE",
+                                                 "signalText":  "🟢 VERDE",
+                                                 "status":  "Notas al día y mejoría en sus actividades."
+                                             },
+                                             {
+                                                 "area":  "Etica",
+                                                 "teacher":  "Cristian Garcia",
+                                                 "signal":  "AMARILLO",
+                                                 "signalText":  "🟡 AMARILLO",
+                                                 "status":  "No hizo el primer taller y debe participar más."
+                                             },
+                                             {
+                                                 "area":  "Ingles",
+                                                 "teacher":  "Gustavo Rojas",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Sociales",
+                                                 "teacher":  "Luis Cañaveral",
+                                                 "signal":  "ROJO",
+                                                 "signalText":  "🔴 ROJO",
+                                                 "status":  "Falta a clase sin excusa y necesita mayor productividad."
+                                             },
+                                             {
+                                                 "area":  "Tecnologia",
+                                                 "teacher":  "Marlon Solano",
+                                                 "signal":  "AMARILLO",
+                                                 "signalText":  "ðŸŸ¡ AMARILLO",
+                                                 "status":  "Solo hay una clase observada y luego una ausencia."
+                                             },
+                                             {
+                                                 "area":  "Biologia",
+                                                 "teacher":  "Patricia Chanci",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Edu. Fisica",
+                                                 "teacher":  "Patricia Chancin",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Sin datos reportados."
+                                             },
+                                             {
+                                                 "area":  "Artistica",
+                                                 "teacher":  "Julian Ramirez",
+                                                 "signal":  "ROJO",
+                                                 "signalText":  "ðŸ”´ ROJO",
+                                                 "status":  "No presenta actividades, acumula notas bajas y no trabaja en clase."
+                                             },
+                                             {
+                                                 "area":  "Fisica",
+                                                 "teacher":  "Cristian Monsalve",
+                                                 "signal":  "GRIS",
+                                                 "signalText":  "⚪ GRIS",
+                                                 "status":  "Diagnóstico en curso; sin evidencia suficiente."
+                                             }
+                                         ],
+                         "feedbackParagraphs":  [
+                                                    "Vivian concentra uno de los perfiles de mayor alerta del grupo analizado: varios docentes coinciden en inasistencia, pendientes y escasa productividad en clase. Ese patrón aparece en Cátedra y emprendimiento, Matemáticas, Sociales y Artística, y ubica el acompañamiento como una prioridad inmediata.",
+                                                    "El principal contrapeso actual está en Religión/Filosofía, donde sí se reportan orden y mejoría. Aun así, el corte deja 6 áreas en `⚪ GRIS` y la combinación de ausencias y no entrega de actividades justifica un seguimiento intensivo y semanal."
+                                                ],
+                         "dimensions":  [
+                                            {
+                                                "name":  "Compromiso Académico",
+                                                "level":  "BAJO",
+                                                "summary":  "Predominan inasistencias, tareas no presentadas y poca presencia efectiva en clase. La evidencia disponible no permite hablar de estabilidad académica en este momento."
+                                            },
+                                            {
+                                                "name":  "Madurez Emocional",
+                                                "level":  "BAJA",
+                                                "summary":  "No hay datos para afirmar un problema emocional específico, pero sí señales claras de baja autorregulación frente a asistencia, tareas y continuidad del proceso. La lectura se mantiene en el plano escolar observable."
+                                            },
+                                            {
+                                                "name":  "Riesgo de Deserción",
+                                                "level":  "CRÍTICO",
+                                                "summary":  "La suma de repitencia, inasistencia reiterada, actividades sin presentar y baja vinculación al aula configura una alerta crítica. Requiere intervención inmediata con trazabilidad pedagógica."
+                                            },
+                                            {
+                                                "name":  "Dinámica Social/Grupal",
+                                                "level":  "REGULAR",
+                                                "summary":  "No se registran conflictos fuertes con pares, pero la baja asistencia limita su integración real al grupo. La dificultad principal es de permanencia y participación más que de convivencia."
+                                            }
+                                        ],
+                         "earlyRiskSignals":  [
+                                                  "⚠️ Inasistencia reiterada en varias áreas.",
+                                                  "⚠️ Actividades y talleres pendientes o no presentados.",
+                                                  "⚠️ Baja participación y escasa productividad en el aula."
+                                              ],
+                         "behaviorPatterns":  [
+                                                  "Su continuidad en el proceso depende fuertemente de la asistencia.",
+                                                  "Requiere control cercano para evitar acumulación de pendientes.",
+                                                  "Tiene un área donde sí logra responder mejor, lo que puede servir de anclaje."
+                                              ],
+                         "recommendations":  [
+                                                 "Activar control diario de asistencia y justificación oportuna de ausencias.",
+                                                 "Construir un plan semanal de recuperación para Matemáticas, Sociales y Artística.",
+                                                 "Hacer seguimiento tutorial con familia y coordinación cada semana.",
+                                                 "Organizar una lista única de pendientes para evitar dispersión.",
+                                                 "Tomar Religión/Filosofía como referencia de hábito positivo para extenderlo a otras áreas."
+                                             ],
+                         "derived":  {
+                                         "areaColorCounts":  {
+                                                                 "VERDE":  1,
+                                                                 "AMARILLO":  2,
+                                                                 "ROJO":  4,
+                                                                 "GRIS":  6
+                                                             },
+                                         "grayAreas":  6,
+                                         "criticalAreas":  4,
+                                         "areasWithEvidence":  7
+                                     },
+                         "source":  {
+                                        "file":  "Informes Estudiantiles\\2026-1\\seguimiento_2026_T1.md",
+                                        "heading":  "Vivian Estefany Velez"
+                                    }
+                     }
+                 ]
+}

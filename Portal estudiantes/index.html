@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal de Informes Estudiantiles</title>
+  <meta
+    name="description"
+    content="Portal estático para consultar informes estudiantiles derivados de archivos Markdown."
+  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="page-bg"></div>
+  <div class="shell">
+    <header class="hero">
+      <div class="hero__content">
+        <p class="eyebrow">Portal estudiantes</p>
+        <h1 id="docTitle">Cargando informes…</h1>
+        <p class="hero__lede" id="docSummary">
+          Portal generado a partir de Markdown como fuente primaria textual.
+        </p>
+        <div class="hero__meta" id="docMeta"></div>
+      </div>
+      <aside class="hero__panel">
+        <p class="eyebrow">Fuente validada</p>
+        <strong id="totalStudents">0</strong>
+        <span>estudiantes estructurados desde Markdown</span>
+        <div class="hero__panel-note">
+          <p id="sourceFiles">0 archivos Markdown válidos</p>
+          <p id="ignoredFiles">0 archivos ignorados</p>
+        </div>
+      </aside>
+    </header>
+
+    <main class="layout">
+      <section class="dashboard">
+        <article class="card stat-card">
+          <p class="label">Semáforo global rojo</p>
+          <strong id="globalRedCount">0</strong>
+          <span>Derivado del conteo por estudiante</span>
+        </article>
+        <article class="card stat-card">
+          <p class="label">Áreas sin evidencia</p>
+          <strong id="grayAreaCount">0</strong>
+          <span>Total de áreas en GRIS</span>
+        </article>
+        <article class="card stat-card">
+          <p class="label">Áreas críticas recurrentes</p>
+          <strong id="criticalAreasCount">0</strong>
+          <span>Con semáforo rojo o amarillo</span>
+        </article>
+      </section>
+
+      <section class="insights-grid">
+        <article class="card">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Lectura global</p>
+              <h2>Distribución por semáforo</h2>
+            </div>
+            <span class="tag">Dato derivado</span>
+          </div>
+          <div id="globalSignalChart" class="signal-chart"></div>
+        </article>
+
+        <article class="card">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Alertas transversales</p>
+              <h2>Áreas más sensibles</h2>
+            </div>
+            <span class="tag">Agrupado por área</span>
+          </div>
+          <div id="criticalAreasList" class="stack-list"></div>
+        </article>
+      </section>
+
+      <section class="workspace">
+        <aside class="sidebar card">
+          <div class="section-head section-head--tight">
+            <div>
+              <p class="eyebrow">Consulta</p>
+              <h2>Estudiantes</h2>
+            </div>
+          </div>
+          <label class="field">
+            <span>Buscar</span>
+            <input id="searchInput" type="search" placeholder="Nombre del estudiante">
+          </label>
+          <label class="field">
+            <span>Semáforo global</span>
+            <select id="signalFilter">
+              <option value="TODOS">Todos</option>
+              <option value="ROJO">Rojo</option>
+              <option value="AMARILLO">Amarillo</option>
+              <option value="VERDE">Verde</option>
+              <option value="GRIS">Gris</option>
+            </select>
+          </label>
+
+          <div class="student-list-wrap">
+            <div class="student-list" id="studentList"></div>
+          </div>
+        </aside>
+
+        <section class="detail-column">
+          <article class="card detail-card">
+            <div id="studentDetail">
+              <p>Cargando ficha del estudiante…</p>
+            </div>
+          </article>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
