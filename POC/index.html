@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IEFV | Portal Academico POC</title>
+  <meta
+    name="description"
+    content="Prueba de concepto para un portal de seguimiento academico y alertas tempranas del IEFV."
+  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Serif:wght@500;600&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <div class="hero__copy">
+        <p class="eyebrow">POC Portal Institucional</p>
+        <h1>Seguimiento academico con foco en alertas, acompanamiento y decisiones rapidas.</h1>
+        <p class="hero__lead">
+          Esta prueba de concepto convierte el seguimiento del periodo 2026-1 en una experiencia web
+          lista para consulta, priorizacion de riesgo y accion docente.
+        </p>
+        <div class="hero__actions">
+          <a class="button button--primary" href="#students">Ver estudiantes</a>
+          <a class="button button--ghost" href="#insights">Ver indicadores</a>
+        </div>
+      </div>
+      <aside class="hero__panel">
+        <p class="hero__panel-label">Estado del piloto</p>
+        <div class="hero__panel-value" id="heroRiskCount">0</div>
+        <p class="hero__panel-text">estudiantes requieren intervencion prioritaria esta semana</p>
+        <ul class="hero__pulse-list" id="heroAlerts"></ul>
+      </aside>
+    </header>
+
+    <main>
+      <section class="metrics" id="insights">
+        <article class="metric-card">
+          <p class="metric-card__label">Estudiantes monitoreados</p>
+          <strong class="metric-card__value" id="metricStudents">0</strong>
+          <span class="metric-card__meta">Fichas individuales por estudiante</span>
+        </article>
+        <article class="metric-card">
+          <p class="metric-card__label">En riesgo alto</p>
+          <strong class="metric-card__value" id="metricHighRisk">0</strong>
+          <span class="metric-card__meta">Cruce entre asistencia, pendientes y observaciones</span>
+        </article>
+        <article class="metric-card">
+          <p class="metric-card__label">Asistencia promedio</p>
+          <strong class="metric-card__value" id="metricAttendance">0%</strong>
+          <span class="metric-card__meta">Lectura rapida del comportamiento del grupo</span>
+        </article>
+        <article class="metric-card">
+          <p class="metric-card__label">Materias con alerta</p>
+          <strong class="metric-card__value" id="metricSubjects">0</strong>
+          <span class="metric-card__meta">Casos que ameritan accion tutorial o academica</span>
+        </article>
+      </section>
+
+      <section class="dashboard-grid">
+        <article class="insight-card insight-card--wide">
+          <div class="section-heading">
+            <div>
+              <p class="section-heading__eyebrow">Lectura general</p>
+              <h2>Radar de acompanamiento</h2>
+            </div>
+            <span class="badge">Periodo 2026-1</span>
+          </div>
+          <div class="distribution" id="riskDistribution"></div>
+          <div class="insight-card__footer">
+            <p>
+              Los datos son demostrativos y replican la estructura del archivo original: fichas por estudiante,
+              observaciones por area y semaforizacion de seguimiento.
+            </p>
+          </div>
+        </article>
+
+        <article class="insight-card">
+          <div class="section-heading">
+            <div>
+              <p class="section-heading__eyebrow">Alertas tempranas</p>
+              <h2>Frentes de accion</h2>
+            </div>
+          </div>
+          <ul class="alert-list" id="alertList"></ul>
+        </article>
+
+        <article class="insight-card">
+          <div class="section-heading">
+            <div>
+              <p class="section-heading__eyebrow">Mapa por area</p>
+              <h2>Materias sensibles</h2>
+            </div>
+          </div>
+          <div class="subject-heatmap" id="subjectHeatmap"></div>
+        </article>
+      </section>
+
+      <section class="students-section" id="students">
+        <div class="section-heading">
+          <div>
+            <p class="section-heading__eyebrow">Consulta operativa</p>
+            <h2>Explorador de estudiantes</h2>
+          </div>
+        </div>
+
+        <div class="toolbar">
+          <label class="toolbar__search">
+            <span>Buscar estudiante</span>
+            <input id="searchInput" type="search" placeholder="Ej. Keidy, Maria, Juan">
+          </label>
+
+          <label class="toolbar__filter">
+            <span>Nivel de riesgo</span>
+            <select id="riskFilter">
+              <option value="all">Todos</option>
+              <option value="high">Riesgo alto</option>
+              <option value="medium">Riesgo medio</option>
+              <option value="low">Riesgo bajo</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="student-layout">
+          <div class="student-list" id="studentList"></div>
+          <article class="student-detail" id="studentDetail">
+            <p class="student-detail__empty">Selecciona un estudiante para ver su ficha consolidada.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
