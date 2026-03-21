@@ -1,22 +1,28 @@
-const SIGNALS = ["ROJO", "AMARILLO", "VERDE", "GRIS"];
-const SIGNAL_CLASS = {
-  ROJO: "pill--ROJO",
-  AMARILLO: "pill--AMARILLO",
-  VERDE: "pill--VERDE",
-  GRIS: "pill--GRIS",
-  NO_ESPECIFICADO: "pill--NO_ESPECIFICADO"
+const PALETTE = [
+  "#4f8ef7",
+  "#9b6ef7",
+  "#2ecc8a",
+  "#f5c842",
+  "#56c7d9",
+  "#f97393",
+  "#a3d65f",
+  "#f28b50"
+];
+
+const SIGNAL_ORDER = ["VERDE", "AMARILLO", "ROJO", "GRIS"];
+const SIGNAL_TEXT = {
+  VERDE: "🟢 FAVORABLE",
+  AMARILLO: "🟡 ATENCIÓN MODERADA",
+  ROJO: "🔴 ALERTA ALTA",
+  GRIS: "⚪ INFORMACIÓN INSUFICIENTE"
 };
 
-let reportData = null;
+let REPORTS = null;
 let activeStudentId = null;
-
-function pill(label) {
-  const normalized = label || "NO ESPECIFICADO";
-  return `<span class="pill ${SIGNAL_CLASS[normalized] || SIGNAL_CLASS.NO_ESPECIFICADO}">${normalized}</span>`;
-}
+let activeChart = null;
 
 function escapeHtml(value) {
-  return String(value)
+  return String(value ?? "NO ESPECIFICADO")
     .replaceAll("&", "&amp;")
     .replaceAll("<", "&lt;")
     .replaceAll(">", "&gt;")
@@ -24,258 +30,334 @@ function escapeHtml(value) {
     .replaceAll("'", "&#39;");
 }
 
-function setDocumentMeta(data) {
-  document.querySelector("#docTitle").textContent = data.document.title;
-  document.querySelector("#docSummary").textContent =
-    "Consulta maestra-detalle basada en Markdown validado. Todo indicador cuantitativo visible se deriva de ese contenido.";
-  document.querySelector("#docMeta").innerHTML = [
-    `<span class="tag">${escapeHtml(data.document.period)}</span>`,
-    `<span class="tag">Institución: ${escapeHtml(data.document.institution)}</span>`,
-    `<span class="tag">${data.source.markdownFiles.length} Markdown válidos</span>`
-  ].join("");
-
-  document.querySelector("#totalStudents").textContent = String(data.derived.totalStudents);
-  document.querySelector("#sourceFiles").textContent = `${data.source.markdownFiles.length} archivos Markdown válidos`;
-  document.querySelector("#ignoredFiles").textContent = `${data.source.ignoredFiles.length} archivos ignorados`;
-  document.querySelector("#globalRedCount").textContent = String(data.derived.globalSignalCounts.ROJO || 0);
-  document.querySelector("#grayAreaCount").textContent = String(data.derived.areaSignalTotals.GRIS || 0);
-  document.querySelector("#criticalAreasCount").textContent = String(data.derived.criticalAreas.length);
+function initials(name) {
+  return name
+    .split(" ")
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((part) => part[0])
+    .join("")
+    .toUpperCase();
 }
 
-function renderSignalChart(data) {
-  const total = data.derived.totalStudents || 1;
-  document.querySelector("#globalSignalChart").innerHTML = SIGNALS.map((signal) => {
-    const count = data.derived.globalSignalCounts[signal] || 0;
-    const width = Math.max(6, Math.round((count / total) * 100));
-    return `
-      <div class="bar-row">
-        <span>${signal}</span>
-        <div class="bar-track">
-          <div class="bar-fill ${SIGNAL_CLASS[signal]}" style="width:${width}%"></div>
-        </div>
-        <strong>${count}</strong>
-      </div>
-    `;
-  }).join("");
+function semaforoClass(label) {
+  if (label === "VERDE") return "badge-verde";
+  if (label === "AMARILLO") return "badge-amarillo";
+  if (label === "ROJO") return "badge-rojo";
+  return "badge-gris";
 }
 
-function renderCriticalAreas(data) {
-  const list = data.derived.criticalAreas.slice(0, 6);
-  document.querySelector("#criticalAreasList").innerHTML = list.map((item) => {
-    const total = item.total || 1;
-    const redWidth = Math.round((item.red / total) * 100);
-    const yellowWidth = Math.round((item.yellow / total) * 100);
-    return `
-      <div class="stack-row">
-        <div class="stack-row__label">
-          <strong>${escapeHtml(item.area)}</strong>
-          <span>${item.total} casos</span>
-        </div>
-        <div class="stack-track">
-          <div class="stack-red" style="width:${redWidth}%"></div>
-          <div class="stack-yellow" style="width:${yellowWidth}%"></div>
-        </div>
-      </div>
-    `;
-  }).join("");
+function dotClass(label) {
+  if (label === "VERDE") return "dot-verde";
+  if (label === "AMARILLO") return "dot-amarillo";
+  if (label === "ROJO") return "dot-rojo";
+  return "dot-gris";
 }
 
-function getFilteredStudents() {
-  const search = document.querySelector("#searchInput").value.trim().toLowerCase();
-  const signal = document.querySelector("#signalFilter").value;
+function studentColor(index) {
+  return PALETTE[index % PALETTE.length];
+}
 
-  return reportData.students.filter((student) => {
-    const matchesSearch = student.name.toLowerCase().includes(search);
-    const matchesSignal = signal === "TODOS" || student.globalSignal.label === signal;
+function enrichStudents(students) {
+  return students.map((student, index) => ({
+    ...student,
+    initials: initials(student.name),
+    color: studentColor(index)
+  }));
+}
+
+function filteredStudents() {
+  const query = document.querySelector("#searchInput").value.trim().toLowerCase();
+  const filter = document.querySelector("#signalFilter").value;
+
+  return REPORTS.students.filter((student) => {
+    const matchesSearch = student.name.toLowerCase().includes(query);
+    const matchesSignal = filter === "TODOS" || student.globalSignal.label === filter;
     return matchesSearch && matchesSignal;
   });
 }
 
-function renderStudentList() {
-  const filtered = getFilteredStudents();
-  const list = document.querySelector("#studentList");
+function renderSidebar() {
+  const list = document.querySelector("#student-list");
+  const students = filteredStudents();
 
-  if (!filtered.length) {
-    list.innerHTML = '<p class="empty-state">No hay estudiantes que coincidan con el filtro actual.</p>';
-    document.querySelector("#studentDetail").innerHTML = '<p class="empty-state">Ajusta los filtros para revisar una ficha.</p>';
+  if (!students.length) {
+    list.innerHTML = '<div class="welcome" style="height:auto; padding: 24px 8px;"><p>No hay coincidencias con el filtro actual.</p></div>';
+    document.querySelector("#main-content").innerHTML = '<div class="welcome"><div class="icon">🔎</div><h2>Sin coincidencias</h2><p>Ajusta la búsqueda o el filtro de semáforo.</p></div>';
     return;
   }
 
-  if (!filtered.some((student) => student.id === activeStudentId)) {
-    activeStudentId = filtered[0].id;
+  if (!students.some((student) => student.id === activeStudentId)) {
+    activeStudentId = students[0].id;
   }
 
-  list.innerHTML = filtered.map((student) => `
-    <button class="student-card ${student.id === activeStudentId ? "is-active" : ""}" data-student-id="${student.id}">
-      <div class="section-head section-head--tight">
-        <div>
-          <h3>${escapeHtml(student.name)}</h3>
-          <span class="student-card__meta">${escapeHtml(student.grade)} · ${escapeHtml(student.period)}</span>
+  list.innerHTML = students.map((student) => {
+    const isActive = student.id === activeStudentId ? "active" : "";
+    const color = student.color;
+    const global = student.globalSignal.label;
+    const semColor =
+      global === "VERDE" ? "var(--green)" :
+      global === "AMARILLO" ? "var(--yellow)" :
+      global === "ROJO" ? "var(--red)" :
+      "#9aa3bd";
+
+    return `
+      <button class="student-btn ${isActive}" id="btn-${student.id}" data-student-id="${student.id}">
+        <div class="avatar" style="background: linear-gradient(135deg, ${color}33, ${color}55); color: ${color};">${student.initials}</div>
+        <div class="student-info-sidebar">
+          <div class="student-name-short">${escapeHtml(student.name)}</div>
+          <div class="semaforo-mini" style="color: ${semColor}">● ${escapeHtml(global)}</div>
         </div>
-        ${pill(student.globalSignal.label)}
-      </div>
-      <span class="student-card__note">${escapeHtml(student.globalSignal.summary)}</span>
-    </button>
-  `).join("");
+      </button>
+    `;
+  }).join("");
 
   list.querySelectorAll("[data-student-id]").forEach((button) => {
     button.addEventListener("click", () => {
       activeStudentId = button.getAttribute("data-student-id");
-      renderStudentList();
-      renderStudentDetail();
+      renderSidebar();
+      showStudent(activeStudentId);
     });
   });
 
-  renderStudentDetail();
+  showStudent(activeStudentId);
 }
 
-function renderAreaRows(student) {
+function renderAreasRows(student) {
   return student.areaSignals.map((area) => `
     <tr>
-      <td>${escapeHtml(area.area)}</td>
-      <td>${escapeHtml(area.teacher)}</td>
-      <td>${pill(area.signal)}</td>
-      <td>${escapeHtml(area.status)}</td>
+      <td class="area-cell"><span class="dot ${dotClass(area.signal)}"></span>${escapeHtml(area.area)}</td>
+      <td class="docente-cell">${escapeHtml(area.teacher)}</td>
+      <td class="estado-cell">${escapeHtml(area.status)}</td>
     </tr>
   `).join("");
 }
 
-function renderMetricTiles(student) {
-  return `
-    <div class="metrics-grid">
-      <div class="metric-tile">
-        <strong>${student.areaSignals.length}</strong>
-        <span>Áreas registradas</span>
-      </div>
-      <div class="metric-tile">
-        <strong>${student.derived.criticalAreas}</strong>
-        <span>Áreas en rojo</span>
-      </div>
-      <div class="metric-tile">
-        <strong>${student.derived.grayAreas}</strong>
-        <span>Áreas en gris</span>
-      </div>
-      <div class="metric-tile">
-        <strong>${student.derived.areasWithEvidence}</strong>
-        <span>Áreas con evidencia</span>
-      </div>
+function renderSignals(items, icon = "⚠️") {
+  return (items.length ? items : ["NO ESPECIFICADO"]).map((item) => `
+    <div class="risk-item">
+      <span class="risk-icon">${icon}</span>
+      <span class="risk-text">${escapeHtml(item)}</span>
     </div>
-  `;
-}
-
-function renderDimensionCards(student) {
-  return student.dimensions.map((dimension) => `
-    <article class="dimension-card">
-      <h3>${escapeHtml(dimension.name)}</h3>
-      <div class="dimension-card__level">${escapeHtml(dimension.level)}</div>
-      <p>${escapeHtml(dimension.summary)}</p>
-    </article>
   `).join("");
 }
 
-function renderListCard(title, items) {
-  const listItems = items.length
-    ? items.map((item) => `<li>${escapeHtml(item)}</li>`).join("")
-    : "<li>NO ESPECIFICADO</li>";
-
-  return `
-    <article class="list-card">
-      <h3>${escapeHtml(title)}</h3>
-      <ul>${listItems}</ul>
-    </article>
-  `;
+function renderDimensions(student) {
+  return student.dimensions.map((dimension) => `
+    <div class="dim-item">
+      <div class="dim-text">
+        <div class="dim-name">${escapeHtml(dimension.name)}</div>
+        <div class="dim-level">${escapeHtml(dimension.level)}</div>
+        <div>${escapeHtml(dimension.summary)}</div>
+      </div>
+    </div>
+  `).join("");
 }
 
-function renderFeedback(student) {
-  return `
-    <article class="feedback-card">
-      <h3>Realimentación general</h3>
-      ${student.feedbackParagraphs.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("")}
-    </article>
-  `;
+function renderRecommendations(student) {
+  return student.recommendations.map((item, index) => `
+    <div class="rec-item">
+      <span class="rec-num">${index + 1}</span>
+      <span class="risk-text">${escapeHtml(item)}</span>
+    </div>
+  `).join("");
 }
 
-function renderSourceCard(student) {
-  return `
-    <article class="source-card">
-      <h3>Trazabilidad</h3>
-      <p><strong>Archivo fuente:</strong> ${escapeHtml(student.source.file)}</p>
-      <p><strong>Encabezado fuente:</strong> ${escapeHtml(student.source.heading)}</p>
-      <p><strong>Dato derivado:</strong> conteo de semáforos por área y agregados globales.</p>
-    </article>
-  `;
+function renderObservations() {
+  return REPORTS.document.observations.map((item) => `
+    <div class="obs-item">
+      <span class="obs-icon">🛈</span>
+      <span class="risk-text">${escapeHtml(item)}</span>
+    </div>
+  `).join("");
 }
 
-function renderStudentDetail() {
-  const student = reportData.students.find((item) => item.id === activeStudentId);
-  const container = document.querySelector("#studentDetail");
+function chartDataForStudent(student) {
+  return {
+    labels: SIGNAL_ORDER,
+    values: SIGNAL_ORDER.map((signal) => student.derived.areaColorCounts[signal] || 0),
+    colors: ["#2ecc8a", "#f5c842", "#f25c5c", "#4a5168"]
+  };
+}
 
-  if (!student) {
-    container.innerHTML = '<p class="empty-state">NO ESPECIFICADO</p>';
-    return;
+function drawChart(student) {
+  const canvas = document.querySelector("#studentChart");
+  if (!canvas) return;
+
+  if (activeChart) {
+    activeChart.destroy();
   }
 
-  container.innerHTML = `
-    <div class="detail-head">
-      <div class="section-head section-head--tight">
-        <div>
-          <p class="eyebrow">Ficha individual</p>
-          <h2>${escapeHtml(student.name)}</h2>
-        </div>
-        ${pill(student.globalSignal.label)}
+  const data = chartDataForStudent(student);
+  activeChart = new Chart(canvas, {
+    type: "doughnut",
+    data: {
+      labels: data.labels,
+      datasets: [
+        {
+          data: data.values,
+          backgroundColor: data.colors,
+          borderColor: "#181c27",
+          borderWidth: 3
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          position: "bottom",
+          labels: {
+            color: "#8892b0",
+            font: {
+              family: "Sora",
+              size: 11
+            },
+            boxWidth: 12
+          }
+        }
+      }
+    }
+  });
+}
+
+function showStudent(id) {
+  const student = REPORTS.students.find((item) => item.id === id);
+  if (!student) return;
+
+  const verdeCount = student.derived.areaColorCounts.VERDE || 0;
+  const amarilloCount = student.derived.areaColorCounts.AMARILLO || 0;
+  const rojoCount = student.derived.areaColorCounts.ROJO || 0;
+  const grisCount = student.derived.areaColorCounts.GRIS || 0;
+  const badgeClass = semaforoClass(student.globalSignal.label);
+
+  document.querySelector("#main-content").innerHTML = `
+    <div class="profile-header">
+      <div class="profile-avatar" style="background: linear-gradient(135deg, ${student.color}33, ${student.color}55); color: ${student.color};">${student.initials}</div>
+      <div>
+        <div class="profile-name">${escapeHtml(student.name)}</div>
+        <div class="profile-meta">Grado ${escapeHtml(student.grade)} · Período ${escapeHtml(student.period)} · Fuente Markdown validada</div>
       </div>
-      <p class="data-note">${escapeHtml(student.globalSignal.summary)}</p>
-      ${renderMetricTiles(student)}
+      <div class="global-badge ${badgeClass}">
+        Semáforo Global<br>${escapeHtml(SIGNAL_TEXT[student.globalSignal.label] || student.globalSignal.label)}
+      </div>
     </div>
 
-    <h3 class="detail-section-title">Dimensiones de análisis</h3>
-    <div class="detail-grid">${renderDimensionCards(student)}</div>
+    <div class="grid-4">
+      <div class="card" style="border-top: 3px solid var(--green)">
+        <div class="card-title">🟢 Áreas en Verde</div>
+        <div class="metric-value" style="color: var(--green)">${verdeCount}</div>
+        <div class="metric-note">Áreas con señal favorable.</div>
+      </div>
+      <div class="card" style="border-top: 3px solid var(--yellow)">
+        <div class="card-title">🟡 Áreas en Amarillo</div>
+        <div class="metric-value" style="color: var(--yellow)">${amarilloCount}</div>
+        <div class="metric-note">Áreas que requieren atención.</div>
+      </div>
+      <div class="card" style="border-top: 3px solid var(--red)">
+        <div class="card-title">🔴 Áreas en Rojo</div>
+        <div class="metric-value" style="color: var(--red)">${rojoCount}</div>
+        <div class="metric-note">Áreas de riesgo inmediato.</div>
+      </div>
+      <div class="card" style="border-top: 3px solid var(--gray)">
+        <div class="card-title">⚪ Áreas en Gris</div>
+        <div class="metric-value" style="color: #a9b3d1">${grisCount}</div>
+        <div class="metric-note">Sin evidencia suficiente.</div>
+      </div>
+    </div>
 
-    <h3 class="detail-section-title">Semáforo por área</h3>
-    <article class="table-card">
-      <h3>Matriz de áreas</h3>
-      <table>
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-title">📊 Distribución del semáforo por área</div>
+        <div class="chart-container">
+          <canvas id="studentChart"></canvas>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">⚠️ Señales tempranas de riesgo</div>
+        ${renderSignals(student.earlyRiskSignals, "⚠️")}
+      </div>
+    </div>
+
+    <div class="card" style="margin-bottom: 20px">
+      <div class="card-title">📋 Estado por área y docente</div>
+      <table class="areas-table">
         <thead>
           <tr>
             <th>Área</th>
             <th>Docente</th>
-            <th>Semáforo</th>
-            <th>Estado</th>
+            <th>Estado académico</th>
           </tr>
         </thead>
-        <tbody>${renderAreaRows(student)}</tbody>
+        <tbody>${renderAreasRows(student)}</tbody>
       </table>
-    </article>
+    </div>
 
-    <h3 class="detail-section-title">Análisis completo</h3>
-    <div class="detail-grid">
-      ${renderFeedback(student)}
-      ${renderListCard("Señales tempranas de riesgo", student.earlyRiskSignals)}
-      ${renderListCard("Hábitos y patrones de comportamiento", student.behaviorPatterns)}
-      ${renderListCard("Recomendaciones pedagógicas", student.recommendations)}
-      ${renderSourceCard(student)}
-      <article class="source-card">
-        <h3>Observaciones generales del documento</h3>
-        ${reportData.document.observations.map((item) => `<p>${escapeHtml(item)}</p>`).join("")}
-      </article>
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-title">💬 Realimentación general</div>
+        ${student.feedbackParagraphs.map((paragraph) => `<p class="feedback-text" style="margin-bottom: 14px;">${escapeHtml(paragraph)}</p>`).join("")}
+        <div class="card-title" style="margin-top: 18px;">🧭 Dimensiones de análisis</div>
+        ${renderDimensions(student)}
+      </div>
+      <div class="card">
+        <div class="card-title">🔁 Hábitos y patrones</div>
+        <div style="margin-bottom: 16px;">
+          ${(student.behaviorPatterns.length ? student.behaviorPatterns : ["NO ESPECIFICADO"]).map((item) => `<span class="habit-tag">${escapeHtml(item)}</span>`).join("")}
+        </div>
+        <div class="card-title" style="margin-top:16px">✅ Recomendaciones pedagógicas</div>
+        ${renderRecommendations(student)}
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-title">🧾 Trazabilidad del informe</div>
+        <p class="source-text"><strong>Archivo fuente:</strong> ${escapeHtml(student.source.file)}</p>
+        <p class="source-text" style="margin-top: 10px;"><strong>Encabezado fuente:</strong> ${escapeHtml(student.source.heading)}</p>
+        <p class="source-text" style="margin-top: 10px;"><strong>Dato derivado mostrado:</strong> conteo de semáforos por área y distribución del estudiante.</p>
+      </div>
+      <div class="card">
+        <div class="card-title">🗂 Observaciones generales del documento</div>
+        ${renderObservations()}
+      </div>
+    </div>
+
+    <div class="warning-card">
+      <span style="font-size:20px">⚠️</span>
+      <div><strong>Alcance de la fuente:</strong> este portal solo refleja el contenido presente en el Markdown validado. La institución permanece como ${escapeHtml(REPORTS.document.institution)} y no se muestran métricas no derivables del archivo fuente.</div>
     </div>
   `;
+
+  setTimeout(() => drawChart(student), 50);
 }
 
-async function boot() {
+async function init() {
   const response = await fetch("./data/reports.json", { cache: "no-store" });
-  reportData = await response.json();
-  activeStudentId = reportData.students[0]?.id || null;
+  const data = await response.json();
+  REPORTS = {
+    ...data,
+    students: enrichStudents(data.students)
+  };
 
-  setDocumentMeta(reportData);
-  renderSignalChart(reportData);
-  renderCriticalAreas(reportData);
-  renderStudentList();
+  document.querySelector("#headerTitle").textContent = REPORTS.document.title;
+  document.querySelector("#headerSubtitle").textContent = `Portal derivado de ${REPORTS.source.markdownFiles.length} Markdown válido(s) · ${REPORTS.derived.totalStudents} estudiantes estructurados`;
+  document.querySelector("#headerPeriod").textContent = REPORTS.document.period;
 
-  document.querySelector("#searchInput").addEventListener("input", renderStudentList);
-  document.querySelector("#signalFilter").addEventListener("change", renderStudentList);
+  document.querySelector("#searchInput").addEventListener("input", renderSidebar);
+  document.querySelector("#signalFilter").addEventListener("change", renderSidebar);
+
+  activeStudentId = null;
+  renderSidebar();
 }
 
-boot().catch((error) => {
-  document.querySelector("#studentDetail").innerHTML = `<p class="empty-state">Error cargando datos: ${escapeHtml(error.message)}</p>`;
+init().catch((error) => {
+  document.querySelector("#main-content").innerHTML = `
+    <div class="welcome">
+      <div class="icon">⚠️</div>
+      <h2>Error cargando el portal</h2>
+      <p>${escapeHtml(error.message)}</p>
+    </div>
+  `;
 });
